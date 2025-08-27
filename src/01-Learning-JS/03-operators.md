@@ -215,8 +215,30 @@ First, go back to the last chapter and grab the suite of primitives that you cre
 4. Print them all to the console with `console.log()`.
 5. Check your work, as you go, by opening the browser console with the **Inspect Element** tool.
 
-```javascript
-// Write your code in here
+```js
+// 
+let superman = 5000000000, clarkkent = 25; clarkkent = superman; 
+clarkkent = 5000000000 
+
+let amigos = 10 - '7'; amigos = 3 
+var dalmations = 202 / '2'; dalmations = 101  
+
+// Yields Boolean false 
+Harry != Potter
+// Yields Boolean true
+Dumbledore != Good Guy    
+
+// Yields Boolean true
+Harry == Potter || James == Potter
+
+// Yields Boolean true
+ Hermione == Granger && Ron == Weasley
+
+let a = chicken, b = meatball; b *=a; b = chickenmeatball
+
+let x = "Alyssa's age is" + 21; // "Alyssa's age is 21"
+
+console.log()
 ```
 
 ## Submission
