@@ -32,7 +32,7 @@ The latest JS standard defines eight data types that are called **primitives**, 
 4. [**null**](https://developer.mozilla.org/en-US/docs/Glossary/Null). A special keyword denoting a null value. (Because JavaScript is case-sensitive, `null` is not the same as `Null`, `NULL`, or any other variant.)
 5. [**undefined**](https://developer.mozilla.org/en-US/docs/Glossary/Undefined). Assigned automatically to variables that have just been declared: `undefined`.
     ```javascript
-    let x
+    let 
     console.log(x) //Output: undefined
     ```
 6. [**Object**](https://developer.mozilla.org/en-US/docs/Glossary/Object). Objects are a collection of properties, which are structured and identified using key-value pairs. They can be parsed/looped-thru, retrieved, and accessed with two main types of syntax, as seen below:
@@ -62,9 +62,34 @@ Primitives enable you to perform fundamental data operations.
 3. Print them all to the console with `console.log()`.
 4. Check your work, as you go, by opening the browser console with the **Inspect Element** tool.
 
-```javascript
-// Write your code in here
-```
+```js
+//   
+  var superman = "Clark Kent"
+
+  const amigos = 3
+  var dalmations = 101
+
+  let booleanGrit = true
+  let booleanPretenses = false
+
+  let null = "Umbridge"
+
+  let chickenmeatball
+  console.log(chickenmeatball) //Output: undefined
+
+  let cheeseTypes = {
+    white: "Parmesan",
+      orange: "Cheddar",
+    }
+
+    // Assign new property to object
+    cheeseTypes.delicious = "Tasty!"
+
+    // Both Output: "Tasty!"
+    console.log(cheeseTypes['delicious'])
+    console.log(cheeseTypes.delicious)
+
+console.log(js)
 
 ## Submission
 
