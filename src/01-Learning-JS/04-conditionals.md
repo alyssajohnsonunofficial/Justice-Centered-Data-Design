@@ -174,6 +174,7 @@ if () {
 }
 ```
 
+
 ```js
 let person1Age = 28
 if (person1Age == 28 ) {
@@ -188,10 +189,7 @@ Write an `if` statement that reports whether `person1Profession` is `"married"`.
 Use the following console log, when the condition is `true`: `console.log("Person is married.")`
 
 ```js
-let person1Profession = "married"
-if (person1Profession == "married") {
-  console.log("Person is married.")
-}
+// Your code here
 ```
 
 ## E3
