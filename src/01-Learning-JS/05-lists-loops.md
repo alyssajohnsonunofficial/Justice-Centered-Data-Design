@@ -392,12 +392,11 @@ professions
 
 For this first exercise, I'll provide you with the basic structure:
 
-```javascript
-// Declare new and freshly empty array in which to push new items
-let lessProfessions = []
-for () {
-  if () {
-    // Do something in here
+```js
+let lessProfessions = ["married", "widow", "laborer",]
+for (let i = 0; i < professions.length; i++){
+  if (i !== 1){
+  lessProfessions.push(professions[i])
   }
 }
 ```
@@ -406,25 +405,23 @@ for () {
   Interactive output of the array of <code>lessProfessions</code>
 </p>
 
-```javascript
-// Convert me to output `lessProfessions`
-lessProfessions
+```js
+ lessProfessions
 ```
 
 ### E2. Push/add a new profession to an array
 
 **Goal**: Add a new profession as a String, `"spinster"`, to your `professions` list, then log it to the web console.
 
-```javascript
-// Convert and code here
+```js
+professions.push("spinster")
 ```
 
 <p class="codeblock-caption">
   Interactive output of the array of <code>lessProfessions</code>
 </p>
 
-```javascript
-// Convert me to output `professions`
+```js
 professions
 ```
 
@@ -432,8 +429,14 @@ professions
 
 **Goal**: Make a `for` loop that considers each item in the `professions` array and logs "Person's profession is ___", which "___" should be the profession from the array.
 
-```javascript
-// Convert and code here
+```js
+for (const job in professions) {
+  console.log(
+    job,
+    "--",
+    "Person's profession is", professions[job]
+  )
+}
 ```
 
 ### E4. More conditional pushing with `for...of`
