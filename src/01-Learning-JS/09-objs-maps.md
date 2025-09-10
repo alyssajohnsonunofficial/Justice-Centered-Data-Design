@@ -402,7 +402,7 @@ let nc2024SampleVotersUpdate = [
 This voter data has lots of dates, which we learned how to process and change with parsers and formatters from D3.js/Observable. Let's In the codeblock below with a new version of the data assigned to the variable `nc2024SampleVotersUpdate`.
 
 <!-- Rendered for...of nc2024SampleVotersUpdate -->
-```javascript
+```js
 for (const voter of nc2024SampleVotersUpdate) {
   // Create a Date object from the String value
   let voterReqDate = parseDateSlash(voter.ballot_req_dt)
@@ -955,12 +955,22 @@ nc24VotersRollUpPartyAndRace.get("DEM").get("F") // Yields 4149
   Be sure to write your code in a manner aligned with how I break down the process above.
 </p>
 
-```javascript
+```js
 // Your code goes here
+let raceAndStatus = nc2024SampleVoters.map(
+  (ballot) => {
+    let returnRace = ballot.race
+    let returnStatus = ballot.ballot_rtn_status
+    if (returnStatus != null) {
+      return {race: returnRace, status: returnStatus}
+    }
+  }
+)
 ```
 
-```javascript
+```js
 // Your new variable here
+raceAndStatus
 ```
 
 ### E2. Group NC Voters By the Ballot Sent Date as an InternMap()
@@ -976,12 +986,22 @@ nc24VotersRollUpPartyAndRace.get("DEM").get("F") // Yields 4149
   Be sure to write your code in a manner aligned with how I break down the process above.
 </p>
 
-```javascript
+```js
 // Your code goes here
+const dateParse = d3.utcParse("%d/%m/%Y");
+for (let voter of nc2024SampleVoters) {
+  voter.ballot_send_dt_obj = 
+  dateParse(voter.ballot_send_dt);
+}
+let voterMap = d3.group(
+  nc2024SampleVoters, 
+  (d) => d.ballot_send_dt_obj
+)
 ```
 
-```javascript
+```js
 // Your grouped variable here
+voterMap
 ```
 
 ### E3. Group NC Voters By Age Range as an InternMap()
@@ -994,18 +1014,45 @@ nc24VotersRollUpPartyAndRace.get("DEM").get("F") // Yields 4149
     I'll guide you through this first one. Again, it helps to listify the process required, so you can then think about what JS you've learned so far to help you implmement those steps.
   </p>
   <ol>
-    <li>If we want to group the data by a range of age groups, then we need a list of those age groups to use in our code. So, we must <em>manually create an Array list of age limits as Number values</em>. For example, the age limits could be, but don't need to be, based on decades like <code>[30, 40, 50, 60, 70, 80, 90, 100]</code>.
+    <li>If we want to group the data by a range of age groups, then we need a list of those age groups to use in our code. So, we must <em>manually create an Array list of age limits as Number values</em>. For example, the age limits could be, but don't need to be, based on decades like <code>[50, 60, 70, 80, 90, 100]</code>.
     <li>Now, we can use that <strong><code>Array</code> of age limits by decade</strong> to check <strong><code>if</code> each <code>voter's age</code> fits within a particular decade</strong>.
     <li><code>if</code>then you can check if a voter is less than 30 years old, then less than 40 AND greater than or equal to 30, ... and so on.
   </ol>
 </div>
 
-```javascript
+```js
 // Your code goes here
+const ages = [50, 60, 70, 80, 90]
+for (let voter of nc2024SampleVoters){
+  if (voter.age < ages [0]){
+    voter.ageRange = "Under 50"
+  }
+  else if (voter.age < ages[1]){
+    voter.ageRange = "51-59"
+  }
+  else if (voter.age < ages[2]){
+    voter.ageRange = "61-69"
+}
+else if (voter.age < ages[3]){
+    voter.ageRange = "71-79"
+}
+else if (voter.age < ages[4]){
+    voter.ageRange = "81-89"
+}
+else {
+  voter.ageRange = "90+"
+}
+let voterAgesMap = d3.group(
+  nc2024SampleVoters, 
+  (d) => d.ageRange
+)
+}
 ```
 
-```javascript
+```js
 // Your grouped variable here
+
+voterAgesMap
 ```
 
 ### E4. Group NC Voters by Your Desired set of 2-3 Fields as an InternMap()
