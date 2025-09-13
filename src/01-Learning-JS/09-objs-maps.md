@@ -969,9 +969,10 @@ let raceAndStatus = nc2024SampleVoters.map(
 ```
 
 ```js
-// Your new variable here
+// Note to self, showed an array of four objects; first two were 'Object', second two were both 'undefined'. Cool!
 raceAndStatus
 ```
+
 
 ### E2. Group NC Voters By the Ballot Sent Date as an InternMap()
 
@@ -987,13 +988,13 @@ raceAndStatus
 </p>
 
 ```js
-// Your code goes here
-const dateParse = d3.utcParse("%d/%m/%Y");
-for (let voter of nc2024SampleVoters) {
+// Note to self, issue with this one was you did capital Y; lowercase fixed it by turning it from "00xx" to "20xx". Same issue you went over with the prof. Key for this is bookmarked. 'ballot_send_dt" now shows up in Inspect!
+let dateParse = d3.utcParse("%d/%m/%y");
+for (const voter of nc2024SampleVoters) {
   voter.ballot_send_dt_obj = 
   dateParse(voter.ballot_send_dt);
 }
-let voterMap = d3.group(
+const dateMap = d3.group(
   nc2024SampleVoters, 
   (d) => d.ballot_send_dt_obj
 )
@@ -1001,7 +1002,7 @@ let voterMap = d3.group(
 
 ```js
 // Your grouped variable here
-voterMap
+dateMap
 ```
 
 ### E3. Group NC Voters By Age Range as an InternMap()
@@ -1025,22 +1026,34 @@ voterMap
 const ages = [50, 60, 70, 80, 90]
 for (let voter of nc2024SampleVoters){
   if (voter.age < ages [0]){
-    voter.ageRange = "Under 50"
+   voter.ageRange == "Under 50"
   }
-  else if (voter.age < ages[1]){
-    voter.ageRange = "51-59"
+  else if (voter.age = ages [0]){
+    voter.ageRange == "50"
   }
-  else if (voter.age < ages[2]){
-    voter.ageRange = "61-69"
+  else if (voter.age < ages [1]){
+    voter.ageRange == "51-59"
+  }
+  else if (voter.age = ages [1]){
+    voter.ageRange == "60"
+  }
+  else if (voter.age < ages [2]){
+    voter.ageRange == "61-69"
 }
-else if (voter.age < ages[3]){
-    voter.ageRange = "71-79"
+else if (voter.age = ages [2]){
+    voter.ageRange == "70"
+  }
+else if (voter.age < ages [3]){
+    voter.ageRange == "71-79"
 }
-else if (voter.age < ages[4]){
-    voter.ageRange = "81-89"
+else if (voter.age = ages [3]){
+    voter.ageRange == "80"
+  }
+else if (voter.age < ages [4]){
+    voter.ageRange ==  "81-89"
 }
 else {
-  voter.ageRange = "90+"
+  voter.ageRange ==  "90+"
 }
 let voterAgesMap = d3.group(
   nc2024SampleVoters, 
@@ -1050,8 +1063,11 @@ let voterAgesMap = d3.group(
 ```
 
 ```js
-// Your grouped variable here
-
+// Note: saw a ballot from a voter in Mount Airy...that's where I'm from!! So sick. Also, I had to redefine voterAgesMap here because Windows wouldn't accept that it was already defined in the previous codeblock. Showed up in Inspect >> Console as entries. 
+let voterAgesMap = d3.group(
+  nc2024SampleVoters, 
+  (d) => d.ageRange
+)
 voterAgesMap
 ```
 
@@ -1061,16 +1077,57 @@ voterAgesMap
 
 First outline your procedure with steps below. Then, use the JS codeblock to perform your grouping as a D3.js `InternMap()`.
 
-1. Enter step 1
-2. Enter step 2
-3. ...
+1. Set ethnicity and gender fields as values with nested for...of loops. 
+2. Use an InternMap() with .group() to group the data by the chosen fields (mine are gender and ethnicity)
+3. Execute it in the second codeblock. 
 
-```javascript
-// Your code goes here
+```js
+// Set ethnicity and gender fields as values with nested for...of loops. I used the ethnicity options I saw listed throughout the chapter, which were "undesignated" and "not hispanic or not latino".
+for (const voter of nc2024SampleVoters) {
+  if (voter.gender == "M") {
+    if (voter.ethnicity == "UNDESIGNATED")
+{
+  voter.ethnicityAndGender == "M_UNDESIGNATED"
+}
+  else {
+    voter.ethnicityAndGender == "M_NOTHISPANICorNOTLATINO"
+  }
+}
+}
+else if (voter.gender == "F") {
+  if (voter.ethnicity == "UNDESIGNATED") {
+    voter.ethnicityAndGender == "F_UNDESIGNATED"
+  }
+  else {
+    voter.ethnicityAndGender == "F_NOTHISPANICorNOTLATINO"
+  }
+}
+  else if (voter.gender == "UNA") {
+      if (voter.ethnicity == "UNDESIGNATED") {
+    voter.ethnicityAndGender == "UNA_UNDESIGNATED"
+    }
+  else {
+    voter.ethnicityAndGender == "UNA_NOTHISPANICorNOTLATINO"
+  }
+  }
+
+  let ethnicityAndGenderGroup = d3.group(
+    nc2024SampleVoters, 
+    (d) => 
+    d.ethnicityAndGenderGroup
+  )
+
 ```
 
-```javascript
-// Your grouped variable here
+```js
+// Had to declare it again or Windows would say it was undefined.
+let ethnicityAndGenderGroup = d3.group(
+    nc2024SampleVoters, 
+    (d) => 
+    d.ethnicityAndGenderGroup
+  )
+
+ethnicityAndGenderGroup
 ```
 
 ### E5. Rollup NC Voters by Total Ballot Sent Date as an InternMap()
@@ -1079,16 +1136,28 @@ First outline your procedure with steps below. Then, use the JS codeblock to per
 
 First outline your procedure with steps below. Then, use the JS codeblock to perform your rollup as a D3.js `InternMap()`.
 
-1. Enter step 1
-2. Enter step 2
-3. ...
+1. Use dataParse to add a date field for ballot_req_dt.
+2. Bring in nc2024SampleVoters data and set "voter" variable.
+3. Roll up the date field with .rollup(); use d.length to get total count and d.ballot_req_dt_obj to push the new date field.
+4. Execute the rollup with the second codeblock.
 
-```javascript
+
+```js
 // Your code goes here
+let dateParse = d3.utcParse("%d/%m/%y");
+for (const voter of nc2024SampleVoters) {
+  voter.ballot_req_dt_obj = dateParse(voter.ballot_req_dt);
+}
+let reqDateMap = d3.rollup (
+  nc2024SampleVoters, 
+  (D) => D.length,
+  (d) => d.ballot_req_dt_obj
+)
 ```
 
-```javascript
+```js
 // Your grouped variable here
+reqDateMap
 ```
 
 ## Submission
