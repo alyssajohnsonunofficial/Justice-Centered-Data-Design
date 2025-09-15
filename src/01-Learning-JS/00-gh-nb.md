@@ -104,7 +104,7 @@ Here's that process again for you:
 // I will show up on the page. 
 ```
 ```js
-
+console.log("I do NOT show up on the page")
 ```
 
 ## Conclusion
