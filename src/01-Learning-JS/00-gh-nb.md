@@ -100,6 +100,10 @@ Here's that process again for you:
 4. Inside the "js" codeblock, add the following text `console.log("I do NOT show up on the page")`.
     - **NOTE**: This codeblock should NOT render on the locally hosted page. I'll show where to find it in class. `:-)`
 
+```javascript
+
+```
+
 ## Conclusion
 
 Techniques learned and practiced include:
