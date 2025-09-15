@@ -101,8 +101,9 @@ Here's that process again for you:
     - **NOTE**: This codeblock should NOT render on the locally hosted page. I'll show where to find it in class. `:-)`
 
 ```javascript
-
+// I will show up on the page. 
 ```
+
 
 ## Conclusion
 
