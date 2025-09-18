@@ -1,22 +1,15 @@
-# Title for the page
+# Alyssa Johnson's JavaScript Midterm
 
-- Unordered list of the following information:
-- **Name**: Your first and last name
-- **Dataset**: Filename of the chosen dataset
+- **Name**: Alyssa Johnson
+- **Dataset**: meta-ads
 
 ## Overview
 
-Paragraph 1: Briefly explain your reasons for choosing the specific dataset,
-which can include any discussion about the topic and particular variables.
+I decided to choose the meta-ads dataset because it strongly ties into two topics that interest me: one, advertising, and two, the use of media to incite political violence. I also thought it was really interesting that the data shows which ads were about Israel, since that connects to the ongoing conflict between Israel and Palestine. I also thought the variables (the currency used to purchase the ad, the amount spent on it, the number of impressions it received, etc.) would be fun to work with. 
 
-The following given executable js codeblock that imports the one set of D3.js
-modules that you will need to use for Date() object work. You will need to
-remove the forward-slashes preceeding the backticks, since I needed to
-eascape these characters within this block.
-
-\`\`\`js
+```js
 import {utcParse,utcFormat} from "d3-time-format";
-\`\`\`
+```
 
 Then, divide the notebook into meaningfully sections and subsections.
 Use the following general scheme to revise as needed.
