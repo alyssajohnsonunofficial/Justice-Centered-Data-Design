@@ -11,18 +11,15 @@ I decided to choose the meta-ads dataset because it strongly ties into two topic
 import {utcParse,utcFormat} from "d3-time-format";
 ```
 
-Then, divide the notebook into meaningfully sections and subsections.
-Use the following general scheme to revise as needed.
-
 ## Attach the data
 
 
 ```js
-const data = FileAttachment("./../data/midterm-options/meta-ads/meta-ads-mentioning-israel-after-2015-09-11.csv").csv({typed: true})
+const adData = FileAttachment("./../data/midterm-options/meta-ads/meta-ads-mentioning-israel-after-2015-09-11.csv").csv({typed: true})
 ```
 ```js
 //The output is an array with 172,800 objects. I can see all the variables mentioned in the readme.md file, including the ad's id, creation time, currency, impressions, URL, and the amount of money spent. 
-data 
+adData 
 ```
 
 ## Convert Dates
@@ -34,20 +31,39 @@ date data in any new ways.
 Again, be sure to output your newly transformed data in executable codeblocks
 for easier verification and reviewing.
 
-## Grouping #1 - Name of grouping here
+```js
+const parseDateSlash = utcParse("%d/%m/%y")
+```
 
-Explain your plan to group the data in a particular way here, before you do so.
-At least one of the groupings should use some variation of D3's `.rollup()`, so
-you can count particular grouped properties.
+```js
+let adDateObjectNew = adData.map(
+  (ad) => 
+  {ad.ad_creation_time_obj = utcParse("%d/%m/%y")
+    return ad
+  }
+)
+```
+```js
+// This new field is showing up in the console for each object, but instead of a data, I'm seeing f(c), which means function. I'm unsure if this is okay or if I'm doing something wrong. I posted in the help forum. For now, I'll leave this as is unless I get a response or figure this out. 
+adDateObjectNew
+```
 
-Provide a procedure of your grouping plan in an ordered list before the codeblock:
+## Grouping #1 - adDataByCountryInternMap (Grouping By Currency)
 
-1. Coding_Action_1
-2. Coding_Action_2
-3. ...
+1. Choose the field to group the data by (I chose 'currency_original' because I wanted to the different countries the data came from and how much of it came from each place)
+2. Declare an intern map to hold the newly grouped data (adDataByCountryInternMap) in an executable codeblock
+3. Use d3.group to group the data by the 'currency_original' field
+4. Declare the newly grouped data (adDataByCountryInternMap) in a second executable codeblock
 
-Again, be sure to output your newly transformed data in executable codeblocks
-for easier verification and reviewing.
+```js
+const adDataByCountryInternMap = d3.group(
+  adData, 
+  (d) => d.currency_original
+)
+```
+```js
+adDataByCountryInternMap
+```
 
 ## Grouping #2 - Name of grouping here
 
