@@ -16,12 +16,14 @@ Use the following general scheme to revise as needed.
 
 ## Attach the data
 
-In this section, be sure to make some small notes about the data and output it
-in an executable js codeblock, so you can review it on the page interactively.
-You can note its size, for instance, as well as any other notable insights
-gleaned during your first glance.
 
-Remember that this is a notebook, so you can treat it like one. `:-)`
+```js
+const data = FileAttachment("./../data/midterm-options/meta-ads/meta-ads-mentioning-israel-after-2015-09-11.csv").csv({typed: true})
+```
+```js
+//The output is an array with 172,800 objects. I can see all the variables mentioned in the readme.md file, including the ad's id, creation time, currency, impressions, URL, and the amount of money spent. 
+data 
+```
 
 ## Convert Dates
 
