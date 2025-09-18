@@ -50,10 +50,11 @@ adDateObjectNew
 
 ## Grouping #1 - adDataByCountryInternMap (Grouping By Currency)
 
-1. Choose the field to group the data by (I chose 'currency_original' because I wanted to the different countries the data came from and how much of it came from each place)
+1. Choose the field to group the data by (I chose 'currency_original' because I wanted to see the different countries the data came from and how much of it came from each place)
 2. Declare an intern map to hold the newly grouped data (adDataByCountryInternMap) in an executable codeblock
 3. Use d3.group to group the data by the 'currency_original' field
 4. Declare the newly grouped data (adDataByCountryInternMap) in a second executable codeblock
+5. Leave notes in the second codeblock describing the new output
 
 ```js
 const adDataByCountryInternMap = d3.group(
@@ -62,6 +63,7 @@ const adDataByCountryInternMap = d3.group(
 )
 ```
 ```js
+// The output is a Map of 54 different Arrays of objects; each array represents a different type of currency, and each object is an item from the dataset (aka each item is an ad). According to this grouping, the most common currencies used were USD (with 99,057 objects) and ILS/Israeli Sheqels (with 23,980 objects), while the least common currency used was NIO/Nicaraguan Cordoba (With just 1 object). I plan to explore this one more in my own time; it's very fascinating to see which countries were most involved. 
 adDataByCountryInternMap
 ```
 
