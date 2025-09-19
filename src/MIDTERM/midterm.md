@@ -63,8 +63,15 @@ const adDataByCountryInternMap = d3.group(
 )
 ```
 ```js
-// The output is a Map of 54 different Arrays of objects; each array represents a different type of currency, and each object is an item from the dataset (aka each item is an ad). According to this grouping, the most common currencies used were USD (with 99,057 objects) and ILS/Israeli Sheqels (with 23,980 objects), while the least common currency used was NIO/Nicaraguan Cordoba (With just 1 object). I plan to explore this one more in my own time; it's very fascinating to see which countries were most involved. 
-adDataByCountryInternMap
+/* The output is a Map of 54 different Arrays of objects; each array
+* represents a different type of currency, and each object is an item 
+* from the dataset (aka each item is an ad). According to this 
+* grouping, the most common currencies used were USD (with 99,057
+* objects) and ILS/Israeli Sheqels (with 23,980 objects), while the 
+* least common currency used was NIO/Nicaraguan Cordoba (with just 1 
+* object). I plan to explore this one more in my own time; it's very  
+* interesting to see which countries were most involved. */
+adDataByCountryInternMap 
 ```
 
 ## Grouping #2 - adDataRollUpMaxSpendAndID (Grouping By Max Spend and Ad Archive ID)
@@ -88,7 +95,16 @@ let adDataRollUpMaxSpendAndID = d3.rollup(
 ```
 
 ```js
-// The output is a Map with 172,800 objects. Each object is an item (ad) from the dataset, and each item's Facebook URL and archive ID are shown. The URL is shown first, and then each URL has an arrow function pointing to the item's respective archive ID. It's worth noting that the archive IDs are each in Maps of their own, with the only object in these Maps being the archive ID. Presumably this is because both fields got a (d) => line and therefore each got their own Map. The fields I used for grouping here were less interesting than the first group, but the rollup method felt more convenient!
+/* The output is a Map with 172800 objects. Each object is an item 
+* (ad) from the dataset, and each item's Facebook URL and archive ID 
+* are shown. The URL is shown first, and then an arrow function comes 
+* next to point to the item's respective archive ID. It's worth 
+* noting that the archive IDs are each in Maps of their own, with the
+* only object in those Maps being the archive ID. Presumably this is 
+* because both fields got a (d) => line and therefore each got their 
+* own Map. The fields I used for grouping here were less interesting 
+* than the first group, but the rollup method felt more convenient!
+*/
 adDataRollUpMaxSpendAndID
 ```
 
