@@ -110,10 +110,17 @@ adDataRollUpMaxSpendAndID
 
 ## Reflection
 
-Use the following prompt to guide your reflection about your data work:
-"What 2-3 insights and 2-3 questions did you glean from your initial work
-with the dataset?"
+Prompt: What 2-3 insights and 2-3 questions did you glean from your initial work
+with the dataset?
 
-Use the PR-TEMPLATE prompts to reflect on the midterm experience.
+### My Insights
 
-```
+1. Grouping data is a lot more convenient than I initially realized! The original data is a bit difficult to make sense of on its own, especially if I'm trying to glean insights from the individual items, but by grouping the data by specific fields, I can access the insights I want more quickly and efficiently. One of the most pressing questions I had about the dataset was which countries were funding the most Meta ads from the set. Through grouping the data by the currency_original field, I was able to quickly answer my question!
+
+2. Datasets can tell a story on their own. I haven't worked much with data before this (aside from the data entry tasks I do for my job), but while I was working with this dataset, I noticed how much I was learning just from the data itself --- context and analysis would be interesting too, but it's not necessarily needed. I was able to use the data to figure out which countries the ads were coming from, how much was spent, how many people the ads reached, etc. 
+
+### My Questions
+
+1. I still have some questions about the date conversion part of this, specifically the part where my object was shown in the console as f(c) instead of an actual date. I'm wondering what I did wrong there and what caused my Data object to output as a function. 
+
+2. I have some curiosities about the dataset itself, which I plan to answer by looking into The Markup's story. I'm interested to know how they procured the dataset (and how data journalists get ahold of datasets like this in general), how each field was useful to them, and what conclusions they drew from it. 
