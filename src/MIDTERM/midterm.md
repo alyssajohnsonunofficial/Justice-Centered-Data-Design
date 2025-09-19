@@ -54,7 +54,7 @@ adDateObjectNew
 2. Declare an intern map to hold the newly grouped data (adDataByCountryInternMap) in an executable codeblock
 3. Use d3.group to group the data by the 'currency_original' field
 4. Declare the newly grouped data (adDataByCountryInternMap) in a second executable codeblock
-5. Leave notes in the second codeblock describing the new output
+5. Leave a multi-line comment in the second codeblock describing the new output
 
 ```js
 const adDataByCountryInternMap = d3.group(
@@ -67,20 +67,30 @@ const adDataByCountryInternMap = d3.group(
 adDataByCountryInternMap
 ```
 
-## Grouping #2 - Name of grouping here
+## Grouping #2 - adDataRollUpMaxSpendAndID (Grouping By Max Spend and Ad Archive ID)
 
-Explain your plan to group the data in a particular way here, before you do so.
-At least one of the groupings should use some variation of D3's `.rollup()`, so
-you can count particular grouped properties.
+1. Decide which fields to use for grouping the data (I chose the ad_url and ad_archive_id fields because I felt that they would be very helpful fields for someone working with this dataset)
+2. Introduce a new Array for grouping the data (adDataRollUpMaxSpendAndID)
+3. Use d3.rollup to group and reduce the data with my chosen fields
+4. Input my original Array of objects (adData)
+5. Reduce the data with D.length
+6. Use two arrow functions to group the data by my chosen fields
+7. Declare the newly grouped data (adDataRollUpMaxSpendAndID) in a second executable codeblock
+8. Describe the new output in the second codeblock with a multi-line comment
 
-Provide a procedure of your grouping plan in an ordered list before the codeblock:
+```js
+let adDataRollUpMaxSpendAndID = d3.rollup(
+  adData,
+  (D) => D.length,
+  (d) => d.ad_url,
+    (d) => d.ad_archive_id
+)
+```
 
-1. Coding_Action_1
-2. Coding_Action_2
-3. ...
-
-Again, be sure to output your newly transformed data in executable codeblocks
-for easier verification and reviewing.
+```js
+// The output is a Map with 172,800 objects. Each object is an item (ad) from the dataset, and each item's Facebook URL and archive ID are shown. The URL is shown first, and then each URL has an arrow function pointing to the item's respective archive ID. It's worth noting that the archive IDs are each in Maps of their own, with the only object in these Maps being the archive ID. Presumably this is because both fields got a (d) => line and therefore each got their own Map. The fields I used for grouping here were less interesting than the first group, but the rollup method felt more convenient!
+adDataRollUpMaxSpendAndID
+```
 
 ## Reflection
 
