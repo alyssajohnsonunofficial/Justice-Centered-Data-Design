@@ -43,15 +43,15 @@ With these goals for the texts in mind, please respond to the questions herein a
 
 **Question**: Use the space below to define the provided key terms.
 
-- According to the SFSJ authors, what are the main difference between **data** and **information**?:
-- **Variable**:
-- **Constant**:
-- **Conceptualization**:
-- **Operationalization**:
-- **Nominal level of data**:
-- **Ordinal level of data**:
-- **Interval level of data**:
-- **Ratio level of data**:
+- According to the SFSJ authors, what is the main difference between **data** and **information**?: According to the SFSJ authors, data are the raw numbers/scores that come from qualitative and quantitative research, while information is the result of data being analyzed and interpreted. Essentially, a researcher collects data from their research and then analyzes and interprets that data to produce information. 
+- **Variable**: A variable is a characteristic that varies from person to person. The SFSJ Chapter 1 reading gives the examples of gender, race, income, and education level, among others. 
+- **Constant**: A constant is a characteristic that is the same for the subjects of research. For example, if a study focuses on a group of women, being a woman is a constant for that group. 
+- **Conceptualization**: Conceptualization is the process of choosing and clearly defining the variables of your study. Having precise conceptualization helps others replicate the study or even just understand what the study is researching. 
+- **Operationalization**: Operationalization is the method used to measure variables in a study, such as the reading's example of using a standardized instrument like the Rosenberg Self-Esteem Scale. 
+- **Nominal level of data**: A nominal level of data classifies observations into mutually exclusive categories that don't involve inherent orders or rankings. The reading gives the example of a yes or no question like "Are you employed?". 
+- **Ordinal level of data**: An ordinal level of data classifies observations into mutually exclusive categories that have an inherent order; the reading's example is asking about level of education. 
+- **Interval level of data**: An interval level of data classifies observations into mutually exclusive categories that have an inherent order and equal spacing between categories. 
+- **Ratio level of data**: A ratio level of data classifies observations into mututally exclusive categories that have an inherent order, equal spacing, and a reflection of the absolute magnitude. The reading explains that most quantitative data is either this type or the interval level type. 
 
 ### 1.2. On positivism
 
