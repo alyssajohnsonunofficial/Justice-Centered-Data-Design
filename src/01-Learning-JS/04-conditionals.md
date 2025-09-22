@@ -174,8 +174,12 @@ if () {
 }
 ```
 
+
 ```js
-// Your code here
+let person1Age = 28
+if (person1Age == 28 ) {
+  console.log("Person is less than 30 years old.")
+}
 ```
 
 ## E2
@@ -195,7 +199,11 @@ Write an `if` statement that reports whether `person1Age` is less than 30 years 
 Use the following console log, when the condition is `true`: `console.log("Person is less than 30 years old and married.")`
 
 ```js
-// Your code here
+let person1Age = 28
+let person1Profession = "married"
+if (person1Age = 28)(person1Profession="married") {
+  console.log("Person is less than 30 years old and married.")
+}
 ```
 
 ## E4
@@ -224,11 +232,18 @@ Combine an`if` statement with an `else` statement that will report whether `pers
 
 Use the following console logs:
 
-- For `true`: `console.log('Person is less than 30 years old.')`
-- For `else`: `console.log('Person is more than 30 years old.')`
+- For `true`: `console.log('Person is more than 30 years old.')`
+- For `else`: `console.log('Person is less than 30 years old.')`
 
 ```js
-// Your code here
+let person2Age = 60
+
+if (person2Age == 60) {
+  console.log("Person is more than 30 years old.")
+}
+else {
+  console.log("Person is less than 30 years old.")
+}
 ```
 
 ## E5 - ELSE IF time!
@@ -262,7 +277,17 @@ Use the following console logs:
 - `else`: `console.log('Person is more than 30 years old.')`
 
 ```js
-// Your code here
+let person3Age = 30
+
+if (person3Age == 29) {
+  console.log("Person is less than 30 years old.")
+}
+else if (person3age == 30) {
+  console.log('Person is exactly 30 years old.')
+}
+else (person3age == 31) {
+  console.log("Person is more than 30 years old.")
+}
 ```
 
 ## E6 - Conditional with numbers and an object!
@@ -290,7 +315,11 @@ Write an `if` statement that will report whether `childrenTotal['person1']` has 
 Use the following console log, when `if` is `true`: `console.log('Person has children.')`.
 
 ```js
-// Your code here
+let childrenTotal['person1'] = 1
+
+if (childrenTotal['person1'] >= 1) {
+      console.log("Person 1 has children.")
+    }
 ```
 
 ## E7
@@ -312,7 +341,15 @@ if (childrenTotal['person2']) {
 ```
 
 ```js
-// Your code here
+let childrenTotal['person1'] = 1
+if (childrenTotal['person1'] == 1) {
+  console.log(('Person has 1 child.'))
+}
+
+let childrenTotal['person2'] = 2
+if (childrenTotal['person2'] != 1) {
+  console.log(('Person has 2 children.'))
+}
 ```
 
 ## E8
@@ -344,8 +381,21 @@ let person1 = {
 let person1 = {
   profession: "married"
 }
+if (person1['profession'] == "married") {
+  console.log('Person is married.')
+}
 
-// Your code here
+else if (person1['profession'] == "laborer") {
+  console.log('Person is a laborer.')
+}
+
+else if (person1['profession'] == "widow") {
+  console.log('Person is a widow.')
+}
+  
+else {
+  console.log('Person has unknown profession.')
+}
 ```
 
 ### E8.1 Change to laborer
@@ -370,7 +420,23 @@ person1['profession'] = "laborer"
 ```
 
 ```js
-// Your code here
+person1['profession'] = "laborer"
+
+if (person1['profession'] == "married") {
+  console.log('Person is married.')
+}
+
+else if (person1['profession'] == "laborer") {
+  console.log('Person is a laborer.')
+}
+
+else if (person1['profession'] == "widow") {
+  console.log('Person is a widow.')
+}
+  
+else {
+  console.log('Person has unknown profession.')
+}
 ```
 
 ### E8.2 Change to student
@@ -395,7 +461,23 @@ person1['profession'] = "student"
 ```
 
 ```js
-// Your code here
+person1['profession'] = "student" 
+
+if (person1['profession'] == "married") {
+  console.log('Person is married.')
+}
+
+else if (person1['profession'] == "laborer") {
+  console.log('Person is a laborer.')
+}
+
+else if (person1['profession'] == "widow") {
+  console.log('Person is a widow.')
+}
+  
+else {
+  console.log('Person has unknown profession.')
+}
 ```
 
 ## Submission
