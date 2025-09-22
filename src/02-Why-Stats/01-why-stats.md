@@ -77,7 +77,9 @@ Your_response_here
 
 **Question**: According to the SFSJ authors, what is ***feminist empiricism***? And, what issues does it recognize as important to recognize and remedy? Be sure to discuss why it emphasizes the importance of critically reflecting on aspects of the ***context*** of empirical work.
 
-Your_response_here
+According to the SFSJ authors, feminist empiricism accepts the basic principles of traditional empericism, but simultaneously aims to improve upon it by including values in science. It agrees that only knowledge based on direct observation should be accepted as scientific fact, and also agrees that science is about formulating hypotheses to test again experience, but it disagrees with the notion that the scientific method must be free of values. It seeks to recognize and remedy the issue of researchers taking objective, detached, value-free positions in their research, claiming that this lack of values and emotional attachment isn't feasible and shouldn't be desired because it prevents the researcher/empiricist from recognizing that their research is being influenced by social factors and biases. Feminist empiricism also encourages empiricists to acknowledge their own emotions and values in their social work, feeling that these things can improve the research.
+
+The SFSJ authors also touch on contextual feminist empiricism (developed by Helen Longino), which argues that the "constitutive" values (rules of what's acceptable) and "contextual" values (social and cultural values) of science are not completely distinct of each other, and that scientific knowledge _is_ social knowledge and therefore can only be accessed by empiricists who work within a community context and acknolwedge the political, social and cultural contexts of science. Essentially, this view adds onto feminist empiricism by asserting that it's important to critically reflect on the "contexts" of science (both constitutive and socially/culturally) and bring them together to gather empirical research that embraces scientific investigation while still recognizing social contexts.
 
 ## 3. Questions About "The future of ethics and social justice" in TPC
 
@@ -91,11 +93,11 @@ Your_response_here
 
 **Question**: Briefly define each of the critical issues discussed: Cultural Imperialism, Marginalization, and Intersectional Oppression.
 
-**Cultural Imperialism**: Your_response_here
+**Cultural Imperialism**: The practice of white-European colonizers violently oppressing minority groups by stealing their land, exploiting them for slave labor, and extracting their resources for personal gain, as well as attempting to erase the minority group's culture and assimilate them into the colonizing culture. 
 
-**Marginalization**: Your_response_here
+**Marginalization**: When specific groups of people are excluded from meaningfully participating in society and are forced to live as outsiders on the "margins" of society. The reading gives the example of Native tribes, who, through legislation from the U.S. government, have had their land, rights, language, and sovereignty stripped from them, and currently face extremely high poverty and drop-out rates. 
 
-**Intersectional Oppression**: Your_response_here
+**Intersectional Oppression**: When oppression against different groups intersects due to people belonging to more than one of these groups. For example, as the reading notes, Black mothers experience oppression that is an intersection of misogyny and racism, and this intersection of oppression impacts many different parts of their life, including the medical care they receive and the spaces they have access to. 
 
 ### 3.3. Defining the 3Ps to help us recognize oppression
 
