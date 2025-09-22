@@ -57,7 +57,13 @@ With these goals for the texts in mind, please respond to the questions herein a
 
 **Question**: Describe how the S4SJ authors define and use the term **positivism**. How do they suggest it is different from **post-positivism**? According to the authors, why are both paradigms important to social workers? Now, how do you imagine it is important for TPC professionals?
 
-Your_response_here
+The SFSJ authors define the term "positivism" as being a research paradigm that suggests that social behavior can be studied and understood in a scientific manner; logically, objectively, etc. The approach of this paradigm is that any variable that can't be represented by a measurement operation doesn't belong in science. 
+
+The SFSJ authors suggest that post-positivism is different because it argues that scientific methods are too limiting and rigid to account for the complexity of human nature and relationships and the multiple voices that contribute to building social work knowledge. 
+
+According to the authors, while there are valid critiques of positivism, it's still important for social workers to understand both paradigms because social work relies on quantitative methods to advocate for social change. The authors also assert that it's not the research method that's important for structural social work researchers, but the purpose, which is to promote social justice. 
+
+I imagine TPC professionals also must hold both paradigms as important, and must be able to work with both to achieve the goal of promoting social change. The positivism paradigm is needed because a big part of being a TPC professional is working with data and quantitative methods of research, but the post-positivist paradigm is needed to ensure TPC professionals are coming from a place of advocating for others, taking the voices of marginalized groups into account, and acknowledging non-quantitative methods of research (like feminist theory, critical race theory, etc). 
 
 ### 1.3. On the "*structural perspective*"
 
