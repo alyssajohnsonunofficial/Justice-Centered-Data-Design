@@ -117,7 +117,7 @@ The SJ ethic differs from some of the more traditions ethical philosophies in th
 
 **Question**: Why do Lindgren, Gerdes, and Lawrence position a "SJ ethic" as essential to the future of TPC? What types of problems does it help TPC tackle?
 
-Your_response_here
+Lindgren, Gerdes and Lawrence assert that the SJ ethic is essential to the future of TPC because it allows TPCs to make ethical decisions that take different (sometimes intersecting or oppositonal) forms of oppression into account and work to make genuine structural change. SJ ethics focus on advocating for individuals by working toward collective action to address structural injustices, making it better suited for combating oppressive systems and groups than traditional ethics. 
 
 ## 4. Questions About "Statistical Genre Analysis" (SGA)
 
