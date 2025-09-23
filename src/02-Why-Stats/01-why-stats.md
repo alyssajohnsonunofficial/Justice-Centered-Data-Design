@@ -91,7 +91,7 @@ The SFSJ authors also touch on contextual feminist empiricism (developed by Hele
 
 **Question**: Name and define some of what you deem as the main different parts of the ***socially just ethic***. Be sure to discuss how it is different from other ethical approaches.
 
-Your_response_here
+The SJ ethic differs from some of the more traditions ethical philosophies in that instead of focusing on encouraging individuals to participate in "good" moral behavior, it focuses on building coalitions that advocate for social and structural change. It also differs in that it centers around a specific set of ethical values and practices, like the importance of social workers advocating for oppressed groups and working toward change. SJ ethics also assert the importance of educating and reflecting on different forms of oppression, including cultural imperialism, marginalization, and intersectional oppression. I think it's also important to note that SJ ethics don't necessarily see inclusivity/accessibility as a universal good (unlike other perspectives), instead asserting that there are some situations where exclusivity is important and where TC professionals must consider which audiences have the most important values or needs. SJ ethics define exclusivity as a consequence of communicating, not a moral wrong. 
 
 ### 3.2. Defining critical issues
 
