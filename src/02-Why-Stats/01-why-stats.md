@@ -69,7 +69,11 @@ I imagine TPC professionals also must hold both paradigms as important, and must
 
 **Question**: Name and define the different parts of the ***structural perspective***. Be sure to cover the parts related practice and research.
 
-Your_response_here
+The structural perspective, which encourages social workers to seek social/structural change rather than change from the individuals being marginalized by society, was in part developed by Bob Mullaly. Mullaly felt that there were two competing perspectives within sociology, that being order and conflict, and felt that order aligns with neoliberal ideology, which pushes the idea that capitalism is an adequate economic system and will result in wealth trickling down to the lower classes. Order and neoliberal ideology perpetuate the idea that social problems are caused by people who don't follow society's riles, and mainstream social work has adopted this perspective, which is why it often involves helping individuals adapt to society's expectations. Mullaly's structural perspective instead adopts the conflict perspective and Marxist ideology, which perpetuate the idea that groups with more power are able to oppress others and that society is a struggle between these groups. Ultimately, Mullaly asserts that there are two goals to the structural perspective: alleviating the negative effects people experience from being exploited and marginalized by society, and changing the conditions and social structures that cause these negative effects.
+
+There are five practice/research parts to the structural perspective: Defence of the Client, Collectivization, Materialization, Increasing Client Power in the Worker-Client Relationship, and Enhancing Client Power Through Personal Change. Defence of the Client refers to social workers using the structural perspective to help defend their clients from oppressive systems, as many clients are unfamiliar with their own rights and need an advocate to properly seek justice. Collectivization is about social workers letting clients know that they aren't alone in their struggles and that their problems aren't stemming from individual shortcomings, as well as connecting them with support networks and helping them feel less isolated. Materialization is about making material analyses to show clients the connection between their poverty and mental health issues as a way of assuring them that it isn't their fault. 
+
+Increasing Client Power in the Worker-Client Relationship refers to social workers increasing the power clients feel in the worker-client relationship by using clear language, sharing the reasons for proposed actions, and ensuring clients can see what's in their files, with the ultimate goal of helping the client feel that they are in control of their own problems and solutions. Finally, Enhancing Client Power Through Personal Change refers to the social worker's challenge of maximizing their client's potential for personal change of destructive thoughts and behaviors - without showing judgement or blame. Instead, social workers should focus on clients' strengths and help them make important connections between these destructive thoughts/behaviors and their social context.  
 
 ## 2. Questions about "The history of empiricism"
 
@@ -103,7 +107,7 @@ Your_response_here
 
 **Question**: Define each of the 3Ps below. Explain how each helps us recognize oppression.
 
-**Power**: Your_response_here
+**Power**: 
 
 **Privilege**: Your_response_here
 
