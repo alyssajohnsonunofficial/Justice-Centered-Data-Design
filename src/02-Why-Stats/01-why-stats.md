@@ -107,11 +107,11 @@ The SJ ethic differs from some of the more traditions ethical philosophies in th
 
 **Question**: Define each of the 3Ps below. Explain how each helps us recognize oppression.
 
-**Power**: 
+**Power**: Power refers to the amount of influence and abilities different social groups have over others. The reading asserts that it can be used as a framework to assess oppressive social groups through the "matrix of domination", which organizes power across four domains: structural power (how institutions are connected and benefit from their power to reorganize social and technical relationships at the expense of marginalized groups), disciplinary power (how hegemonies manage and control their power and which rules apply to whom), interpersonal power (how everyday, micro-level interactions of individuals uphold institutional power), and hegemonic power (which encompasses all these domains and views them as a system of ideas for rationalizing how power is organized and distributed).
 
-**Privilege**: Your_response_here
+**Privilege**: According to the reading, privilege is the constraints and affordances individuals are granted or subjected to due to their positionality; for example, white women having more privilege than non-white women, men having more privilege than women, etc. 
 
-**Positionality**: Your_response_here
+**Positionality**: Positionality reflects the identities of individuals and groups in the context of structural oppression. Instead of seeing identity as essential and static, positionality understands aspects of identity as inter-relational, changing across times and contexts, and occasionally being contradictory. The reading gives the example of white women, whose positionality means they experience sexism and misogyny, but aren't subjugated to racism like non-white women are. 
 
 ### 3.4. Why an SJ ethic?
 
