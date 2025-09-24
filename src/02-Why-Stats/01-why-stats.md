@@ -125,7 +125,7 @@ Lindgren, Gerdes and Lawrence assert that the SJ ethic is essential to the futur
 
 **Question**: How do Graham et al define and discuss what constitutes "big" data? How does their definition differ from what you have heard before you read this article?
 
-Your_response_here
+Instead of defining "big data" as datasets that are extremely big in terms of size, Graham et al define it as data that exceeds the capabilities of current methodological techniques. With this definition, datasets are "big" if they are so complex or wide-reaching that none of the available methods of investigation (rhetorical analysis, genre analysis, etc.) can adequately capture the data's full scope or make a meaningful comparison - which is why SGA is needed (according to the reading). Prior to reading this article, I didn't hear the term "big data" often, but in general I assumed it just meant datasets that were large in size, which is the definition the reading acknowledges before providing the sociological TC definition.  
 
 ### 4.2. On SGA
 
