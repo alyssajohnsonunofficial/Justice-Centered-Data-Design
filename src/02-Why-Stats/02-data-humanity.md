@@ -49,7 +49,21 @@ All PDF copies are available in our learning management system.
 
 **Question**: According to D'Ignazio and Klein, what principles concern data and "power"? Define and discuss each principle below. Be sure to note the important questions to ask about data and power.
 
-YOUR_RESPONSE_HERE
+D'Ignazio and Klein name seven principles for challenging power with data: examine power, challenge power, elevate emotion and embodiment, rethink binaries and heirarchies, embrace pluralism, consider context, and make labor visible. 
+
+1. Examine power: This principle is about examining the ways power (aka structural privilege and structural oppression) operates in the world and how systems benefit those they were designed for and marginalize those they weren't. It's noted that there are three questions data feminism asks about power in data science: who is the data science for, who is it by, and whose goals and interests does it uphold? 
+
+2. Challenge power: This principle is about challenging the unequal distribution of power in the world and righting/redistributing it instead of just exposing it. Here, the authors bring up the method of considering counterdata. 
+
+3. Elevate emotion and embodiment: This principle is about challenging the idea that TC and data science must be neutral, rational, and objective, and allowing emotion and identity to play a role in research and TC work. 
+
+4. Rethink binaries and hierarchies: This principle is about reconsidering the gender binary and hierarchy and understanding how false binaries and hidden hierarchies influence data collection and categorization, as well as looking at issues through the lens of gender or without the lens of the gender binary. 
+
+5. Embrace pluralism: This principle is about recognizing the importance of bringing together multiple perspectives (from a wide range of people and communities) into the knowledge-making process to gain more detailed, accurate and truthful knowledge. 
+
+6. Consider context: This principle is about considering the context of data instead of viewing data as neutral and objective. Social and cultural contexts can play a role in the findings of data, so it only makes sense to acknowledge these contexts. 
+
+7. Make labor visible: This principle is about making labor visible and ensuring people are properly compensated, valued and named, especially when their labor is invisible or often forgotten about. The reading gives the example of social media employees who were unable to complete their usual tasks during COVID-19, leading to inaccurate Google browser search results and more spam on Facebook. 
 
 ### 1.2 Data: Objective mirror, or not?
 
