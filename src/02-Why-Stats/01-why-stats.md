@@ -148,7 +148,19 @@ For me, this statement ties back to Helena Longino and the concept of contextual
 
 **Question**: After considering all of these texts -- their exigencies, propositions, and methods -- translate Mullaly's broader definition of the *structural approach* and Moreau's *practice methods* in social work into the domain of TPC or humanist domain of work by putting them into conversation with Lindgren, Gerdes, and Lawrence's SJ ethic and Graham et al's statistical genre analysis. In other words, begin to develop your own structural perspective and set of practices that translates Moreau's 5 practices. Finally, add one new practice approach specific to TPC/your domain.
 
-Your_response_here
+I would say that for TPC, the structural perspective would translate to be about approaching TPC work from the perspective of addressing social justice issues and defending marginalized users through the use of data and tech. Instead of forcing users to adjust to specific tech or data practices, TPC from a structural perspective will change data and tech practices to fit what users need and eliminate injustices. 
+
+1. Defence of the Client translates to Defence of the User; this practice still involves defending someone against an oppressive system, but instead of it being a social work client who needs help with writing letters or attending meetings, it's tech users who need help completing online tasks or using software in a specific way, or people within a dataset who are being impacted by marginalization or oppression. 
+
+2. Collectivization would, I believe, stay the same for the most part. It's about helping users understand that they aren't alone in what they're facing, and using tech to help them find support networks and empower themselves. 
+
+3. Materialization would be similar as well, but instead of focusing on problems that come from material deprivation, it would be tech deprivation. TPCs can help users connect their personal issues to a lack of access to technology and tech-based resources, and understand that they aren't to blame for the structural issues contributing to this. 
+
+4. Increasing Client Power in the Worker-Client Relationship would be Increasing User Power in the TPC-User Relationship, and it would entail TPCs empowering users and making them feel in control of their own problems and solutions by using clear language to describe tech and tech-based issues and sharing explanations for actions taken by the TPC.
+
+5. Enhancing Client Power Through Personal Change would translate to giving users a sense of power by equipping them to handle tech-based issues and activities on their own, similar to the idea of writing to learn to do. TPCs can help users become more independent in their online activities through effective user guides.
+
+6. For a sixth practice for approaching TPC with a structural approach, I propose Empowering Users by Familiarizing Them with Tech. I think it's important for TPCs to demystify technology and technological terms and familiarize users with them enough to alleviate any fears or concerns they may have. When users feel comfortable using tech and discussing tech openly, it's easier for them to play a role in combating their own marginalization through the use of technology and data. 
 
 ## Submission
 
