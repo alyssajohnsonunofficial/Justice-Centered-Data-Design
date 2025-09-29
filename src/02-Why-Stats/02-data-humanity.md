@@ -69,8 +69,18 @@ D'Ignazio and Klein name seven principles for challenging power with data: exami
 
 **Question**: What do D'Ignazio and Klein mean by issues of "false binaries and hidden hierarchies" (p. 3)? Then, explain how principles 3, 5, 6 and 7 each approach such issues.
 
-YOUR_RESPONSE_HERE
+The term 'false binaries' refers to situations where society attempts to force something to be either one thing or the other, not allowing for nuance or fluidity/spectrum. The reading uses examples like male vs female (when there are actually more than 2 genders) and emotion vs science (when the two can actually coexist and be combined).  
 
+Hidden hierarchies are arrangements of structural power/authority that go unnoticed. The reading gives the example of gender, which has an invisible hierarchy that puts men at the top in all areas of life from social institutions to leadership roles. 
+
+Principle 3 (elevate emotion and embodiment) approaches the false binary of emotions vs. data science by challenging it and suggesting that two aren't mutually exclusive. It asserts that valuing emotion helps keep data science grounded in reality. 
+
+Principle 5 (embrace pluralism) approaches the false binary of individual perspectives vs. group perspectives by rejecting it in favor of pooling perspectives from a mix of both individuals and groups. 
+
+Principle 6 (consider context) encourages considering the context of data instead of remaining neutral or objective. This involves directly addressing and challenging hidden hierarchies within race, gender, financial status, etc. 
+
+Prinicple 7 (make labor visible) approaches hidden hierarchies by recognizing and fairly compensating the labor of others, including members of marginalized groups who may not have otherwise been recognized due to being at the bottom of a hidden hierarchy (race, gender, etc). 
+ 
 ## 2. Questions about Queer Data
 
 ### 2.1 Defining "queer data" & "intersectional LGBTQ data"
