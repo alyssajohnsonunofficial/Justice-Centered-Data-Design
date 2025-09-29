@@ -117,7 +117,7 @@ Guyan wrote this book to encourage researchers, activists, and practitioners to 
 
 **Question**: What does Guyan mean when he labels terms like gender, sex, and sexuality as being descriptive—*not* prescriptive (see pp. 13-14 in particular)? Explain the differences between the two with an example from each of the terms.
 
-YOUR_RESPONSE_HERE
+Guyan means that these labels are intended to help describe the fluid, nuanced, varied experiences and characteristics of queer people (the spectrums of gender, sex, and sexuality that queer people experience and that need to be reflected in data), not to enforce strict rules about who does or doesn't fit these labels or to try and claim authority over these identities. 
 
 ### 2.4 "'Visibility is a trap'"
 
