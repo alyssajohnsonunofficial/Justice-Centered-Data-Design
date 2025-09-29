@@ -142,7 +142,7 @@ SGA addresses the problem of TPC struggling to handle large data sets and come t
 
 **Question**: Discuss what this statement means to you. Then, discuss any connections, confusion, and/or questions that you recognize with a SJ ethic and structural perspective?
 
-Your_response_here
+For me, this statement ties back to Helena Longino and the concept of contextual feminist empiricism, specifically Longino's statement that scientific knowledge _is_ social knowledge and can only be achieved by those who work within a community context. Longino believes that the objectivity of science can be reconciled with social and cultural values and contexts, and to do this, scientists must give marginalized communities and members of society the ability to share their perspectives and experiences, which is much more social than the traditional image of science as one objective scientist (typically white and male) who finds the answers to everything on his own. I see connections to the SJ ethic and structural perspective here in that both approach research from social and community-based perspectives and aim to take the experiences and voices of marginalized individuals into account rather than just working from a detached, objective POV. 
 
 ## 6. Translating the structural approach into TPC / Other Humanities Fields
 
