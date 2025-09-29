@@ -87,15 +87,25 @@ Prinicple 7 (make labor visible) approaches hidden hierarchies by recognizing an
 
 **Question**: Create a bulleted list of short excerpts and summary statements where Guyan defines "queer data" and "intersectional LGBTQ data" in the introduction. Be sure to accompany all excerpts and paraphrases with page number locations in the PDF.
 
-- "Short excerpt 1" (p. xx)
-- "Short paraphrase 1" (p. xx)
-- "Short excerpt 2" (p. xx)
-- "Short paraphrase 2" (p. xx)
-- ...
+- "Queer data is a tension." (p. 12, excerpt)
+- "Queer data captures the particular meanings of queer identities across time and space and establishes them as categories for calculations and decision-making." (p. 12, summary)
+- "Using queerness as categories is at odds with the queering of data, which asks critical questions about the foundations of these categories, the privileges some identities get over others, and which individuals benefit from the collection and use of queer data." (p. 12, summary)
+- "Queer data is more than a study of individuals that sit outside the categories of heterosexual or cisgender." (p. 12, excerpt)
+- "Queer data is a blunt, confrontational way of challenging traditional understandings of the intersection between data and identities. It disrupts binaries within gender, race, and sex, and rejects the notion that 'numbers speak for themselves', asserting that sometimes, the numbers actually speak for marginalized groups." (p.12, summary)
+- "Queer data isn't just using data to share the stories and experiences of the LGBTQ community; it's an opportunity to provide more representation for LGBTQ people and reflect them in data." (p.19, summary)
+- "Using an intersectional perspective for analysis makes it easier to identify new challenges and unique qualities." (p.29, summary)
+- "Intersectional LGBTQ data tells a nuanced story that better reflects the messy and overlapping experiences of people's everyday lives." (p.29, excerpt)
+- "Queer data isn't about removing the categories of gender and sex altogether, or increasing the diversity and size of data collected to try and achieve total knowledge. It's about giving LGBTQ people the ability to consistently review the value of participating in data collection, evaluate instances where data structures can be reformed, and withdraw their consent and call for the abolition of data practices if the potential for harm is more than the potential for good." (p.33, summary)
 
 **Question**: Based on your list above, write your own movie tagline, i.e., a short and entertaining one-liner that tries to capture one of the main aspects of "queer data", and another tagline about "intersectional LGBTQ data."
 
-YOUR_TAGLINE_HERE
+**Queer Data Tagline**: 
+
+_Queer Data: Breaking down binaries and combatting categorization_
+
+**Intersectional LGBTQ data tagline**: 
+
+_Life is messy, nuanced, and intersectional. Why shouldn't queer data be the same?_
 
 ### 2.2 Guyan's exigence for the book
 
