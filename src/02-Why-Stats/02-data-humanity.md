@@ -111,7 +111,7 @@ _Life is messy, nuanced, and intersectional. Why shouldn't queer data be the sam
 
 **Question**: Why did Guyan write this book? What was his exigence?
 
-YOUR_RESPONSE_HERE
+Guyan wrote this book to encourage researchers, activists, and practitioners to change the ways they think about data, and to ask critical questions about why data is collected, why specific methods are used, and whose interests it serves. He wants to call attention to the conflicts, intersectionality, and nuance within queer lives and have those things be reflected in queer data so that it can be used to actually provide benefit to the LGBTQ community by breaking down/reforming the structures that contribute to the marginalization of queer people. He also wrote it to reflect his own background of not being an academic, scholar, or statistician, but having an interest in research and policy related to data and identity. Guyan wanted to respond to misconceptions he had heard related to data about LGBTQ people, as well as the lack of data literacy that compels people to read headline numbers and do no further research. 
 
 ### 2.3 "Prescriptive" versus "descriptive"
 
