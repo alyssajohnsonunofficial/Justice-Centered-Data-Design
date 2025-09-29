@@ -136,7 +136,7 @@ Instead of defining "big data" as datasets that are extremely big in terms of si
 3. What questions SGA data and methods enable TPC to ask, and
 4. What methods it uses to do so.
 
-Your_response_here
+SGA addresses the problem of TPC struggling to handle large data sets and come to encompassing conclusions about said data sets without losing any important context or impacting the ability to engage in rhetorical inquiry; SGA allows helps in cases where data requires methods that go beyond the typical TC qualitative and inductive methods. To demonstrate SGA's potential, the reading used a 5000 page subset (around 70,000 data points) from a larger data set of ODAC meeting transcripts. In this specific example, SGA allows TPC to ask questions about the distribution of stakeholders and how it affects the specific factors like the distribution of votes, the forms of evidence used in the sponsor presentations, and the contextual confounders that correlate with measured outcomes. In general, I would say SGA allows TPC to ask questions about statistical or factual data/findings while still taking theory, rhetorical inquiry, and social justice into account --- and ultimately drawing a sythesized conclusion from both aspects. It combines the humanistic and qualitative study of discourse method with statistical methods to create a hybrid of both. 
 
 ## 5. "Science is a social endeavor."
 
