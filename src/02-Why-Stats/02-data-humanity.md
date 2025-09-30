@@ -123,7 +123,7 @@ Guyan means that these labels are intended to help describe the fluid, nuanced, 
 
 **Question**: Guyan cites Foucault's idea about how "'visibility is a trap'" (p. 20 of the PDF). What does this expression mean, and why does Guyan draw parallels between Foucault's original use of it with issues of power and data? Be sure to illuminate your discussion with specific examples that Guyan uses in the book.
 
-YOUR_RESPONSE_HERE
+This expression means that power can operate as a sort of invisible prison, where those who aren't in power may feel unsure as to whether or not they're being watched by those in power, leading them to behave as if they're always being surveilled. Guyan draws parallels here to acknowledge that gathering data about marginalized groups (specifically the queer community here) isn't always a positive thing and can negatively impact the lives of LGBTQ people when used incorrectly. One example Guyan cites here is violence against trans people; though stats and data on trans violence are more visible than ever, the number of recorded charges continues to increase (page 30). Guyan also asserts that queer data carries the burden of proof of oppression against LGBTQ people (which requires the use of finite resources and the labor of researchers and activitists), making it unclear as to whether or not collecting evidence is actually currently contributing to meaningful change. 
 
 ## 3. Questions about "The topology of race"
 
