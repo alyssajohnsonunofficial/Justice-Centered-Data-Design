@@ -139,7 +139,7 @@ Lee finds it important that Appiah changed the standard line of inquiry in legal
 
 **Question**: What does Lee mean by "race is always multiplicitous because social contexts are multiplicitous" (p. 447)? Use the Shaw v. Reno case to help you explain how this challenges both essentialist/biological definitions of race & Appiah's race as synonomous with culture.
 
-YOUR_RESPONSE_HERE
+Lee means that because social contexts are complex and made up of many parts (often with a lot of nuance and the presence of spectrums rather than binaries), race will always be complex and have many parts as well because the notion of race is fueled by social contexts that can be positive, negative, or somewhere in the middle. Race can be used in negative ways, like for stereotyping and discriminating against others, but it can also be used in positive ways, like for building racial solidarity. 
 
 ## 4. Questions about a data team's "rhetorical process of data"
 
@@ -165,7 +165,7 @@ YOUR_RESPONSE_HERE
 
 **Question**: Pick and choose any particular combination of concepts and heuristics from the readings in 2.1 and 2.3. Use these questions and ideas to discuss your understanding of the 2024 NC General Election mail-in ballot data. What questions and criticisms do you have about the dataset's categories, hieararchies, collection, etc.?
 
-YOUR_RESPONSE_HERE
+IGNORE (according to Professor Lindgren)
 
 ## Submission
 
