@@ -149,6 +149,8 @@ First outline your procedure with steps below.
 2. Set my parameters (data, raceKey), which are the dataset and my race key 
 3. Use .map() to access each ballot and set the format for my returned response
 4. Return "Race listed on ballot is" + the listed race 
+5. Declare the function code in a new codeblock
+6. Declare my output variable in a third codeblock
 
 Now, code!
 
