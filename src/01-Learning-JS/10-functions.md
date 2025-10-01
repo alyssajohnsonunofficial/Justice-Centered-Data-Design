@@ -145,27 +145,38 @@ mapConvertedDateObject
 
 First outline your procedure with steps below.
 
-1. Enter step 1
-2. Enter step 2
-3. ...
+1. Declare a function for the race object of the ballots from the dataset 
+2. Set my parameters (data, raceKey), which are the dataset and my race key 
+3. Use .map() to access each ballot and set the format for my returned response
+4. Return "Race listed on ballot is" + the listed race 
 
 Now, code!
 
 ```js
 // Your function code goes here
-const 
+const raceCategories = (data, raceKey) => {
+  let raceDataMap = data.map(
+    (ballot) => {
+      ballot.raceFormat = ballot.raceKey
+      return "Race listed on ballot is" + ballot.raceFormat 
+    }
+  )
+  return raceDataMap
+}
 ```
 
 ```js
 // Your use of the function code goes here
+raceCategories = (data, "race_obj")
 ```
 
 <p class="codeblock-caption">
   E2 Interactive Output
 </p>
 
-```javascript
+```js
 // Your output variable here
+raceCategories
 ```
 
 ## Submission
