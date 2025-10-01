@@ -108,42 +108,36 @@ First outline your procedure with steps below.
 2. Bring in 'data' (the dataset we used FileAttachment for earlier) and use the map function to create a codeblock that achieves the intended goal (will convert to a more generalized function later)
 3. Create a new property in the objects that uses String date fields; in this case, creating "ballot_req_dt_obj" from "ballot_req_dt" with dateParser 
 4. Return the item (in this case, labeled "ballot") and execute the new code ("dataUpdated") to check that it works. It did! Remembered to use lowercase 'y' this time to get the correct dates
-5. Convert the codeblock into a function using the correct structure (+ making the objects and parameters more generalized)
+5. Convert the codeblock into a function using the correct structure (+ making the objects and parameters more generalized, i.e. "item" instead of "ballot")
 
 Now, code!
 
 ```js
 // Went over this in class with prof; can create a .map() procedure first and then wrap it in a function. Did this and had the basic structure of a function written down lower in the codeblock for easier conversation. 
+let dateParse = d3.utcParse("%d/%m/%y")
 const mapConvertedDateObject = (data, dateKey, extraKey) => {
   let newData = data.map(
   (item) => {
     let newKey = dateKey+extraKey
-    item[newKey] = dateParser(item[dateKey])
+    item[newKey] = dateParse(item[dateKey])
     return item
   }
   )
   return newData
 }
 ```
-const dateObjectConversion = (param1, param2) => {
-  let newData = param1 + param2
-
-  return newData
-}
-
 ```js
 // Carried over "data" again since that's what I used for the original codeblock I converted into a function; same with "ballot_rtn_dt" and "_obj" 
-newData = mapConvertedDateObject(data, "ballot_rtn_dt", "_obj")
+mapConvertedDateObject(data, "ballot_rtn_dt", "_obj")
+```
+```js
+// Convert and output variable here
+mapConvertedDateObject
 ```
 
 <p class="codeblock-caption">
   E1 Interactive Output
 </p>
-
-```js
-// Convert and output variable here
-newData
-```
 
 ## E3. Create Your Own Function (with Conditions)!
 
@@ -157,11 +151,12 @@ First outline your procedure with steps below.
 
 Now, code!
 
-```javascript
+```js
 // Your function code goes here
+const 
 ```
 
-```javascript
+```js
 // Your use of the function code goes here
 ```
 
