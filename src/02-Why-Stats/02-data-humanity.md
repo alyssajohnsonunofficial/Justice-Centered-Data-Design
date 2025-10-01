@@ -147,7 +147,7 @@ Lee means that race will always be complex and have many parts because the notio
 
 **Question**: Briefly describe the "god trick" problem. Also, discuss what connections you recognize between the "god trick" problem and some issues raised in our other readings.
 
-YOUR_RESPONSE_HERE
+The "god trick" problem refers to the way the scientific process is often believed to be neutral, objective, and transcending the constrains of our material realities of interpretation and communication, and the way the rhetorics of data are often sacrificed due to this belief and seen as not being valuable enough to track, document, and develop an understanding of. I see a connection between this "god trick" problem and what was discussed in Chapter 2 of Statistic for Social Justice with feminist empiricism and contextual feminist empiricism; Helen Longino asserts that science doesn't have to be detached and objective, but can and should instead take context (like social and cultural values) into account and view scientific knowledge as social knowledge; just as non feminist empiricists try to separate the neutral objective nature of science from the speculative, subjective nature of theory and social/cultural context, the "god trick" problem tries to separate the neutral, objective nature of data from the speculative, subjective nature of rhetoric. 
 
 ### 4.2 What's stasis and stasis networks?
 
