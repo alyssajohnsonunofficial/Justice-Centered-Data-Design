@@ -153,13 +153,15 @@ The "god trick" problem refers to the way the scientific process is often believ
 
 **Question**: Briefly define stasis and stasis networks. Explain what stasis networks provides qualitative researchers?
 
-YOUR_RESPONSE_HERE
+Stasis is a procedure that guides people to come to a consensus on an issue via a series of stases (guiding questions), which include definition, cause, quality, questions of fact, and action. Meanwhile, the term "stasis networks" refers to how stases are represented as nodes to organize and trace their connections to each other and to the questions being asked or explored. 
+
+For qualitative researchers, stasis networks provide a way to identify conflict "hotspots", or instances where angles, data, and essential ethical practices are being overlooked. 
 
 ### 4.3 What's the "DMT cluster"?
 
 **Question**: What's the *DMT cluster*, and how did connect to observations about the data team's judgment about the *quality of metrics*?
 
-YOUR_RESPONSE_HERE
+The *DMT cluster* is a cluster of three important nodes that occur alongside each other: definitive, metrics, and translative. For the data team, the DMT cluster's findings indicated how their initial goals (to "collect, process, analyze, or visualize data") changed or were refined over time as their definitions of the metrics shifted. 
 
 ## 5. Synthesis Response
 
