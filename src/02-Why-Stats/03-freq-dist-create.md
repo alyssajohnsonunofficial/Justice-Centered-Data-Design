@@ -81,7 +81,7 @@ We will be learning how to "read" large data sets with exploratory data analysis
 
 Observable has a suite of modules called **Inputs**. We're going to learn how to use [Observable's Inputs.table()](https://observablehq.com/framework/inputs/table) method to render the attached data as a table. In its most basic form, it expects a flat array of objects with properties, which is what `FileAttachment()` renders for us.
 
-```javascript
+```js
 // Most basic Inputs.table()
 Inputs.table(ncVotersAll)
 ```
@@ -133,12 +133,33 @@ Ok, now I want you to put all of those pieces together in your own `Inputs.table
 
 ![Example output table](./../assets/images/2-why-stats/02-why-stats-ex-table.png)
 
-```javascript
+```js
 // Insert your table here
 Inputs.table(
   // The array of objects
   ncVotersAll,
   {
+    columns: ["id_num", "county_desc", "race", "gender", "age", "ballot_request_party", "ballot_rtn_status"],
+
+    rows: 25, 
+
+    width: {
+      id_num: 20,
+      county_desc: 90,
+      gender: 40,
+      age: 20,
+      race: 90,
+      ballot_request_party: 90,
+    },
+    header: {
+      id_num: "ID",
+      county_desc: "County",
+      race: "Race",
+      gender: "Gender",
+      age: "Age",
+      ballot_request_party: "Ballot Party",
+      ballot_rtn_status: "Ballot Status",
+    },
     // enter each customizing property in this object
   }
 )
@@ -417,12 +438,17 @@ In this video, follow along as I explain the code for the `twoLevelRollUpFlatMap
 
 After you have watched the above video, it is time for you to try this custom function with the two example variables used in the our running angle.
 
-```javascript
-// Convert and create your own two-level grouping
+```js
+let byRaceAndBallotStatus = twoLevelRollUpFlatMap(
+  ncVotersAll,
+  "race",
+  "ballot_rtn_status",
+  "af",
+)
 ```
 
-```javascript
-// Convert and output your variable here
+```js
+byRaceAndBallotStatus
 ```
 
 ## 2.3.7 RFS 3. Sum it up with D3's .sum()!
@@ -503,12 +529,37 @@ Follow along with me in the video below to learn how to create a custom function
 </video>
 
 <!-- Your Reducer Functions -->
-```javascript
+```js
 // Convert and create your own reducer functions akin to "ACCEPTED" vs "REJECTED"
+const fetchAcceptedBallots = (d) => {
+  if (d.ballot_rtn_status != null && d.ballot_rtn_status.startsWith("ACCEPTED") == true) {
+    return d.af
+  }
+  else {
+    return 0
+  }
+}
+
+const fetchRejectedBallots = (d) => {
+  if (d.ballot_rtn_status != null && d.ballot_rtn_status.startsWith("ACCEPTED") == false) {
+    return d.af
+  }
+  else{ 
+    return 0
+  }
+  }
+```
+```js
+const reducerProps = ["WHITE", "BLACK OR AFRICAN AMERICAN"]
+
+const reducerFuncs = [
+  { type: "ACCEPTED", func: getAcceptedBallots },
+  { type: "REJECTED", func: getRejectedBallots },
+]
 ```
 
 <!-- Call and use sumUpWithReducerTests() -->
-```javascript
+```js
 /**
  * Convert and use sumUpWithReducerTests().
  * Be sure to review the utils.js file, so you
