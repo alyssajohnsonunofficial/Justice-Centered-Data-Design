@@ -175,7 +175,7 @@ Also, as we move through this section of the book, we need to cultivate a critic
 
 ### About the NC absentee voter ballot data, and its provenance
 
-Before we move forward, it's a good idea to understand the data with any available external resources to uderstand its provenance. ***Provenance*** is essentially understanding the original context of people, places, intentions, and definitions of the dataset.
+Before we move forward, it's a good idea to understand the data with any available external resources to understand its provenance. ***Provenance*** is essentially understanding the original context of people, places, intentions, and definitions of the dataset.
 
 Perhaps many of us, myself included, were not immediately knowledgable about this subject or process of voting via mail. Here are a couple of primer points that I have learned through some initial reading of the archived 2024 version of NC's website about mail-in/absentee voting ([see ncsbe.gov on archive.org](https://web.archive.org/web/20240108154755/https://www.ncsbe.gov/voting/vote-mail)):
 
@@ -189,11 +189,17 @@ Finally, inside of the `/src/data/nc-voters/provenance/` folder, you can also re
 
 **Question**: After reviewing the above information, how would a SJ ethic inform your intiial understanding of the data, its collected values, and its context? List out in other information or questions that you sense might be missing about the data.
 
-ENTER_YOUR_RESPONSE_HERE
+For this specific dataset, an SJ ethic would give me the perspective that the identities and contexts of the voters who submitted the ballots most likely played a role in how much success they had acquiring a ballot, turning it in on time, and being approved. Instead of blaming the individual voters for needing absentee ballots, not getting their ballot in on time, or not getting their ballot approved, the SJ ethic encourages examining how social and cultural contexts are negatively impacting the accessibility of voting for marginalized groups. I think one type of info missing that could have been really helpful or eye-opening is the reason why each voter needed an absentee ballot, although I acknowledge that this could be something some voters aren't comfortable sharing. I think knowing the biggest factors contributing to the demand for absentee ballots (lack of transportation, disabilities, social anxiety, etc.) could be useful for advocating for users through data. Questions like "Do you have a disability?", "How far away do you live from your nearest polling place?", or even just a straightforward "Why did you choose an absentee ballot?" could give us more context and a better understanding of the dataset. 
 
 **Question**: Based on the case scenario as a communicator at Protect Democracy, and a SJ ethic in mind, what questions, i.e., angles, do you think may be helpful to meet the needs of your situation. Discuss any columns/fields that you are surprised about or spark any curiosities, and create a list of questions they spark in you.
 
-ENTER_YOUR_RESPONSE_HERE
+Based on the given case scenario and an SJ ethic, I think examining the ballots from the angles of race, gender, ethnicity, age, and accessibility could all be helpful for my situation. The first four have their own fields, while the fifth one would require more questions to be asked (as previously mentioned) but could also possibly be pulled from the location/address-related fields, since that info could be used to determine how far away each voter is from their closest polling place. I wasn't surprised about any of the columns or fields, but I found the identity fields (age, gender, race, etc) and the ballot info to be compelling in that they open up a lot of questions about the challenges voters faced in accessing their right to vote. Some of my questions include:
+
+1. Which race shows up most in the dataset, and how might race have played a role in the ability to access a ballot, turn it in on time, and/or get it approved?
+
+2. Which gender shows up the most in the dataset? Could gender have played a role in voter accesibility, and if so, how? Was it working intersectionally with something else, like race? 
+
+3. 
 
 **Question**: What can you understand about the `ballot_rtn_status` column? In other words, what types of values are possible?
 
