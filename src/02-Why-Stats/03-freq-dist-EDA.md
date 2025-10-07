@@ -2,9 +2,9 @@
 
 <!-- IMPORT YOUR MODULES -->
 ```js
-import {utcParse,utcFormat,parseDate,format} from "d3-time-format";
+import {utcParse,utcFormat,format,} from "d3-time-format";
 // Import your custom modules here: getUniquePropListBy, oneLevelRollUpFlatMap, twoLevelRollUpFlatMap, threeLevelRollUpFlatMap, sumUpWithReducerTests
-import {getUniquePropListBy, oneLevelRollUpFlatMap, twoLevelRollUpFlatMap, threeLevelRollUpFlatMap, sumUpWithReducerTests,mapDateObject,} from "./utils/utils.js";
+import {getUniquePropListBy,oneLevelRollUpFlatMap,twoLevelRollUpFlatMap, threeLevelRollUpFlatMap,sumUpWithReducerTests,mapDateObject,} from "./utils/utils.js";
 ```
 
 ## Start Your GH Workflow
@@ -400,19 +400,20 @@ for (const weekNumber of uniqueListOfWeekNumbers) {
        *    Make sure you ignore null values
        *    for `ballot_rtn_status`
       **/
-      const weekRaceAF = d3.sum(
-       afByWeekRaceStatus,
-       (d) => {
-        if (d.ballot_rtn_status != null && d.race == reducerProps[rProperty]) {
-          return d.af
+      const weekRaceAF = d3.sum (
+      afByWeekRaceStatus,
+        (d) => {
+          if (d.ballot_req_dt_week == weekNumber && d.race == reducerProps[rProperty] && d.ballot_rtn_status != null) {
+            return d.af
+          }
         }
-        else{
+        else {
           return 0
         }
-       }
-
-        // WARNING: Remember to separate your iterable and accessor with a comma
       )
+    }
+        // WARNING: Remember to separate your iterable and accessor with a comma
+      
 
       /**
        * 6. Tally absolute frequency based on
@@ -420,14 +421,15 @@ for (const weekNumber of uniqueListOfWeekNumbers) {
        *    2. RACE reducer prop, and
        *    3. REDUCER FUNCTION return value.
       **/
-     afByWeekRaceStatus, 
-     (d) => {
-      if (d.ballot_req_dt_week == weekNumber && d.race == reducerProps[rProperty]) {
-        const totalAmount = reducerFuncs[testObj]["func"](d)
-        return totalAmount
-      }
+    const summedUpLevel = d3.sum()
+
+    afByWeekRaceStatus,
+       (d) => {
+        if (d.ballot_req_dt_week == weekNumber && d.race == reducerProps[rProperty]) {
+          const xSumTotal = reducerFuncs[testorObj]["func"](d)
+          return xSumTotal
+          }
      }
-      const summedUpLevel = d3.sum()
   
 
       // 7. Push result to array of results
@@ -455,10 +457,8 @@ for (const weekNumber of uniqueListOfWeekNumbers) {
         // divided by the total for the entire week (weekRaceAF)
         percentage: summedUpLevel / weekRaceAF,
       })
-
     }
   }
-}
 ```
 
 <p class="codeblock-caption">
@@ -482,14 +482,13 @@ Tabulate the data here. Use `Inputs.table()`'s `format` option to express the pe
 
 ```js
 // Convert and tabulate afGroupedPercResults here
-let percFormatter = d3.format(".2%")
 Inputs.table(
   afGroupedPercResults,
   {
     format: {
       percentage: (x) => format(".2%")(x)
     },
-    columns: ["ballot_req_dt_week", "race", "ballot_rtn_status", "af", "percentage",]
+    columns: ["ballot_req_dt_week", "race", "ballot_rtn_status", "af", "percentage",],
     header: {
       ballot_req_dt_week: "Week Number",
       race: "Race of Voter",
@@ -510,7 +509,7 @@ Inputs.table(
       ballot_rtn_status: "center", 
       af: "center", 
       percentage: "right",   
-    }
+    },
   }
 )
 ```
@@ -525,13 +524,13 @@ Calculating the sum total for each race group by week helps us spot patterns in 
 
 After tabulating the data, as well as sorting and reviewing it, what new angles and questions come to mind?
 
-YOUR_RESPONSE_HERE
+I'm interested in how gender, ethnicity, and age all factor into the acceptance vs. rejection rate and whether or not there would be noticeable trends of intersectional oppression if those angles were persued. I've been able to spot throughout the past couple of chapters that there's a disproportionate amount of Black voter ballots being rejected compared to White voters, and I've also noticed an increase in rejection rates as the deadline is approached. I also have questions about the rate of acceptance vs rejection for marginalized races that weren't reflected in the categories; I think it's clear from the data that racial oppression is influencing the voting system, but I really want to know the specifics of how. 
 
 ## Question: Difficulties?
 
 After tabulating the data, as well as sorting and reviewing it, what difficulties are you experiencing as you review so much data in a table?
 
-YOUR_RESPONSE_HERE
+My computer seems to get really picky about anything related to these tables, and I had quite a bit of a battle with getting it to recognize afGroupedPercResults as defined. In terms of the large amount of data, an issue with the tables we made for this and the previous chapter is that these tables with a lot of data are difficult to draw patterns and analysis from because they're so large that it requires a lot of scrolling back and forth and trying to connect two pieces of data that are many, many rows or columns apart.
 
 ## Conclusion
 
