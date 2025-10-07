@@ -59,7 +59,8 @@ Again, we are going to continue working with the 2024 NC absentee voter CSV file
 2. Assign the data to a variable named `ncVotersAll`.
 3. Render it to the page in a separate codeblock.
 
-```javascript
+```js
+let ncVotersAll = FileAttachment("./../data/nc-voters/nc_absentee_mail_2024.csv").csv({typed: true})
 // FileAttachment() code here assigned to `ncVotersAll`
 ```
 
@@ -69,7 +70,7 @@ Output the data as an interactive array of objects below:
   Interactive output of full data set in <code>ncVotersAll</code>
 </p>
 
-```javascript
+```js
 // Convert to render on page
 ncVotersAll
 ```
@@ -80,7 +81,7 @@ We will be learning how to "read" large data sets with exploratory data analysis
 
 Observable has a suite of modules called **Inputs**. We're going to learn how to use [Observable's Inputs.table()](https://observablehq.com/framework/inputs/table) method to render the attached data as a table. In its most basic form, it expects a flat array of objects with properties, which is what `FileAttachment()` renders for us.
 
-```javascript
+```js
 // Most basic Inputs.table()
 Inputs.table(ncVotersAll)
 ```
@@ -132,12 +133,33 @@ Ok, now I want you to put all of those pieces together in your own `Inputs.table
 
 ![Example output table](./../assets/images/2-why-stats/02-why-stats-ex-table.png)
 
-```javascript
+```js
 // Insert your table here
 Inputs.table(
   // The array of objects
   ncVotersAll,
   {
+    columns: ["id_num", "county_desc", "race", "gender", "age", "ballot_request_party", "ballot_rtn_status"],
+
+    rows: 25, 
+
+    width: {
+      id_num: 20,
+      county_desc: 90,
+      gender: 40,
+      age: 20,
+      race: 90,
+      ballot_request_party: 90,
+    },
+    header: {
+      id_num: "ID",
+      county_desc: "County",
+      race: "Race",
+      gender: "Gender",
+      age: "Age",
+      ballot_request_party: "Ballot Party",
+      ballot_rtn_status: "Ballot Status",
+    },
     // enter each customizing property in this object
   }
 )
@@ -153,7 +175,7 @@ Also, as we move through this section of the book, we need to cultivate a critic
 
 ### About the NC absentee voter ballot data, and its provenance
 
-Before we move forward, it's a good idea to understand the data with any available external resources to uderstand its provenance. ***Provenance*** is essentially understanding the original context of people, places, intentions, and definitions of the dataset.
+Before we move forward, it's a good idea to understand the data with any available external resources to understand its provenance. ***Provenance*** is essentially understanding the original context of people, places, intentions, and definitions of the dataset.
 
 Perhaps many of us, myself included, were not immediately knowledgable about this subject or process of voting via mail. Here are a couple of primer points that I have learned through some initial reading of the archived 2024 version of NC's website about mail-in/absentee voting ([see ncsbe.gov on archive.org](https://web.archive.org/web/20240108154755/https://www.ncsbe.gov/voting/vote-mail)):
 
@@ -167,15 +189,21 @@ Finally, inside of the `/src/data/nc-voters/provenance/` folder, you can also re
 
 **Question**: After reviewing the above information, how would a SJ ethic inform your intiial understanding of the data, its collected values, and its context? List out in other information or questions that you sense might be missing about the data.
 
-ENTER_YOUR_RESPONSE_HERE
+For this specific dataset, an SJ ethic would give me the perspective that the identities and contexts of the voters who submitted the ballots most likely played a role in how much success they had acquiring a ballot, turning it in on time, and being approved. Instead of blaming the individual voters for needing absentee ballots, not getting their ballot in on time, or not getting their ballot approved, the SJ ethic encourages examining how social and cultural contexts are negatively impacting the accessibility of voting for marginalized groups. I think one type of info missing that could have been really helpful or eye-opening is the reason why each voter needed an absentee ballot, although I acknowledge that this could be something some voters aren't comfortable sharing. I think knowing the biggest factors contributing to the demand for absentee ballots (lack of transportation, disabilities, social anxiety, etc.) could be useful for advocating for users through data. Questions like "Do you have a disability?", "How far away do you live from your nearest polling place?", or even just a straightforward "Why did you choose an absentee ballot?" could give us more context and a better understanding of the dataset. 
 
 **Question**: Based on the case scenario as a communicator at Protect Democracy, and a SJ ethic in mind, what questions, i.e., angles, do you think may be helpful to meet the needs of your situation. Discuss any columns/fields that you are surprised about or spark any curiosities, and create a list of questions they spark in you.
 
-ENTER_YOUR_RESPONSE_HERE
+Based on the given case scenario and an SJ ethic, I think examining the ballots from the angles of race, gender, ethnicity, age, and accessibility could all be helpful for my situation. The first four have their own fields, while the fifth one would require more questions to be asked (as previously mentioned) but could also possibly be pulled from the location/address-related fields, since that info could be used to determine how far away each voter is from their closest polling place. I wasn't surprised about any of the columns or fields, but I found the identity fields (age, gender, race, etc) and the ballot info to be compelling in that they open up a lot of questions about the challenges voters faced in accessing their right to vote. Some of my questions include:
+
+1. Which race shows up most in the dataset, and how might race have played a role in the ability to access a ballot, turn it in on time, and/or get it approved?
+
+2. Which gender shows up the most in the dataset? Could gender have played a role in voter accessibility, and if so, how? Was it working intersectionally with something else, like race? 
+
+3. What were the most common reasons voters chose to use absentee ballots? Lack of transporation, too much distance from their nearest polling place, accessibility issues, social anxiety, time contraints, etc. I feel like knowing these would make it easier to look for potential solutions.
 
 **Question**: What can you understand about the `ballot_rtn_status` column? In other words, what types of values are possible?
 
-ENTER_YOUR_RESPONSE_HERE
+The types of values that appear to be possible for the 'ballot_rtn_status' are 'Accepted', 'Accepted - Cured', 'Spoiled-EV', 'Spoiled', 'Returned Undeliverable', 'ID Not Provided', 'Returned After Deadline', and 'Pending Cure'. I understand that this column's values have to do with whether or not the ballot was actually accepted and counted or rejected and not counted, which makes it essential to the discussion of advocating for more accessibility and equity for voters (especially voters of marginalized groups). It's a helpful column for spotting patterns in who is accepted and who isn't, such as racial or gender-based patterns. 
 
 ## 2.3.4 Calculate Absolute Grouped Frequencies with RFS Method
 
@@ -254,7 +282,7 @@ Ok, so we want to create a desired ***grouping*** of `ballot_rtn_status` > `race
     2. Add second param: the computation to perform on the rolled up data. In this case, we want the absolute frequency of ballot statuses per race.
 
 <!-- Example rollups() -->
-```javascript
+```js
 /**
  * .rollups()
  * @return: a flattened version of InternMap:
@@ -273,7 +301,7 @@ const afStatusByRace = d3.rollups(
 </p>
 
 <!-- afStatusByRace output -->
-```javascript
+```js
 // Convert to render on page
 afStatusByRace
 ```
@@ -304,7 +332,7 @@ Let's first look at how `.flat()` works, so you can see how this process will he
 
 Note how it nicely does what it says: takes any array at a particular nested level, iterates through it, and populates them in-place.
 
-```javascript
+```js
 // Convert if you want to see the logs in your own browser
 const arr1 = [0, 1, 2, [3, 4]]
 
@@ -358,25 +386,29 @@ In this second video, I explain the code inside of the custom `oneLevelRollUpFla
 
 Ok, now that you have watched the above video about the `oneLevelRollUpFlatMap()` function. Import it from the `./utils/utils.js` file in the codeblock below.
 
-```javascript
+```js
 // Convert me and import oneLevelRollUpFlatMap()
-import {PUT_ANY_FUNCTIONS_IN_HERE, SEPARATE_MORE_THAN_ONE, WITH_COMMAS} from "enter/path/here.js"
+import {oneLevelRollUpFlatMap} from "./utils/utils.js"
 
 ```
 
 Now, see if it worked!
 
-Use the imported function in the below codeblock to rollup and flatten `ncVotersAll` by (1) `race` and (2) `ballot_rtn_status`.
+Use the imported function in the below codeblock to rollup and flatten `ncVotersAll` by (1) `race` and (2) `ballot_rtn_status`. (IGNORE 2ND)
 
-```javascript
+```js
 // Convert and use `oneLevelRollUpFlatMap()` on `ncVotersAll`
-const byRaceAndBallotStatus = ADD_FUNCTION_HERE
+const byRace = oneLevelRollUpFlatMap(
+  ncVotersAll,
+  "race", 
+  "count",
+)
 ```
 
 Ok, let's see if `byRaceAndBallotStatus` shows up here by rendering it to the page.
 
-```javascript
-byRaceAndBallotStatus
+```js
+byRace
 ```
 
 <div class="error-caption">
@@ -392,12 +424,18 @@ byRaceAndBallotStatus
 
 Ok, now you try this custom function with a different variable from the dataset.
 
-```javascript
+```js
 // Convert and create your own one-level grouping
+const byEthnicity = oneLevelRollUpFlatMap(
+  ncVotersAll,
+  "ethnicity", 
+  "count",
+)
 ```
 
-```javascript
+```js
 // Convert and output your variable here
+byEthnicity
 ```
 
 ## E6. Import and use `twoLevelRollUpFlatMap()` on `ncVotersAll`
@@ -416,12 +454,18 @@ In this video, follow along as I explain the code for the `twoLevelRollUpFlatMap
 
 After you have watched the above video, it is time for you to try this custom function with the two example variables used in the our running angle.
 
-```javascript
-// Convert and create your own two-level grouping
+```js
+import {twoLevelRollUpFlatMap} from "./utils/utils.js"
+let byRaceAndStatus = twoLevelRollUpFlatMap(
+  ncVotersAll,
+  "race",
+  "ballot_rtn_status",
+  "af",
+)
 ```
 
-```javascript
-// Convert and output your variable here
+```js
+byRaceAndStatus
 ```
 
 ## 2.3.7 RFS 3. Sum it up with D3's .sum()!
@@ -432,7 +476,7 @@ Indeed, sometimes, we will need to access properties in an object with the `Numb
 
 Here's the easiest way to use d3.sum(). The first parameter is required, which is any type of iterable. Since you do not need to explicitly define how to access the Number values in a simple array, like the example below, `d3.sum()` has been programmed to assume it is a simple array and sum it up.
 
-```javascript
+```js
 // d3.sum(iterable, accessor) // 10
 d3.sum([1, 2, 2, 2, NaN, 3, null]) // 10
 ```
@@ -502,17 +546,54 @@ Follow along with me in the video below to learn how to create a custom function
 </video>
 
 <!-- Your Reducer Functions -->
-```javascript
+```js
 // Convert and create your own reducer functions akin to "ACCEPTED" vs "REJECTED"
+const onlyAcceptedBallots = (d) => {
+  if (d.ballot_rtn_status != null && d.ballot_rtn_status.startsWith("ACCEPTED") == true) {
+    return d.af
+  }
+  else {
+    return 0
+  }
+}
+
+const onlyRejectedBallots = (d) => {
+  if (d.ballot_rtn_status != null && d.ballot_rtn_status.startsWith("ACCEPTED") == false) {
+    return d.af
+  }
+  else{ 
+    return 0
+  }
+  }
+```
+```js
+const reducerProps = ["WHITE", "BLACK OR AFRICAN AMERICAN"]
+
+const reducerFuncs = [
+  { type: "ACCEPTED", func: onlyAcceptedBallots },
+  { type: "REJECTED", func: onlyRejectedBallots },
+]
+```
+```js
+import {sumUpWithReducerTests} from "./utils/utils.js"
 ```
 
 <!-- Call and use sumUpWithReducerTests() -->
-```javascript
+```js
 /**
  * Convert and use sumUpWithReducerTests().
  * Be sure to review the utils.js file, so you
  * can see the parameters needed for the function.
 **/
+const ballotResultsAcceptedOrRejected = sumUpWithReducerTests(
+  [{type: "Accepted Ballot", func: onlyAcceptedBallots, }, {type: "Rejected Ballot", func: onlyRejectedBallots, },
+  ],
+  ["ASIAN", "WHITE", "UNDESIGNATED", "BLACK or AFRICAN AMERICAN", "TWO or MORE RACES",],
+  byRaceAndStatus, 
+  "race",
+  "ballot_rtn_status",
+  "af",
+)
 ```
 
 <p class="codeblock-caption">
@@ -520,8 +601,9 @@ Follow along with me in the video below to learn how to create a custom function
 </p>
 
 <!-- Your Reducer Functions -->
-```javascript
+```js
 // Convert and output your summed up data
+ballotResultsAcceptedOrRejected
 ```
 
 ## E8. Tabulated absolute frequencies of rejected ballots per race
@@ -533,15 +615,35 @@ Ok, tabulate the rolledup and summed-up results with `Inputs.table()`. Be sure t
 3. Sort the table based on what you deem the most helpful combo of column and ascending vs. descending.
 4. Be sure to provide a short response to the question about your table design.
 
-```javascript
+```js
 // Enter your table here
+Inputs.table(
+  ballotResultsAcceptedOrRejected,
+  {
+    rows: 30,
+    header: {
+      race: "Race of Voter",
+      ballot_rtn_status: "Ballot Status",
+      af: "Number of Ballots Total",
+    },
+    width: {
+      race: 70,
+      ballot_rtn_status: 70,
+      af: 90,
+    },
+    align: {
+      race: "right",
+      ballot_rtn_status: "center",
+      af: "left"
+    },
+  }
+)
 ```
-
 ### Question: Explain your table design choices.
 
 **Q**: What *insights* and *new questions* did you garner from it that you hope to also illustrate/provide for your audience?
 
-ENTER_YOUR_RESPONSE_HERE
+I picked the fields that felt most important to me in terms of containing information that would be helpful for spotting issues of inaccessibility or oppression for voters (race, age, and ballot status). I wanted the header names to be slightly simpler and to have a sense of consistency, and I adjusted the width and alignment based on what visually looked the best to me. In terms of insights, this data showed me how many ballots from each race were accepted vs how many from each race were rejected, which helped me visualize the number of accepted vs rejected balance for each race and consider whether societal factors played a role. For me, this data draws new questions about the role race may have played in the acceptance vs rejection process for these absentee ballots. The most notable stat for me was the rate of accepted vs rejected ballots for Black and/or African American voters: 29,843 accepted ballots to 11,047 rejected ballots, a much larger percentage of rejections compared to many of the other race options. For the audience, I hope this helps to illustrate the role racial oppression can play in the ability for non-white voters to successfully exercise their right to vote. I also hope that the audience generates the kind of questions I myself now have after making the chart. Why is there such a large percentage of rejected votes for Black or African American voters? What factors could be affecting these voters' ability to get their votes accepted? Are there aspects of the voting process that are too inaccessible or not taught thoroughly enough to marginalized groups of people? 
 
 ## Conclusion
 
