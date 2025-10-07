@@ -488,7 +488,7 @@ Inputs.table(
     format: {
       percentage: (x) => format(".2%")(x)
     },
-    columns: ["ballot_req_dt_week", "race", "ballot_rtn_status", "af", "percentage",],
+    columns: ["ballot_req_dt_week", "race", "ballot_rtn_status", "af", "percentage"],
     header: {
       ballot_req_dt_week: "Week Number",
       race: "Race of Voter",
@@ -497,7 +497,7 @@ Inputs.table(
       percentage: "Ballot Percentage",
     },
     width: {
-      ballot_req_dt_week: 20,
+      ballot_req_dt_week: 70,
       race: 70,
       ballot_rtn_status: 70, 
       af: 50, 
@@ -509,7 +509,7 @@ Inputs.table(
       ballot_rtn_status: "center", 
       af: "center", 
       percentage: "right",   
-    },
+    }
   }
 )
 ```
