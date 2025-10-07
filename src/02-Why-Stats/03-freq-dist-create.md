@@ -197,13 +197,13 @@ Based on the given case scenario and an SJ ethic, I think examining the ballots 
 
 1. Which race shows up most in the dataset, and how might race have played a role in the ability to access a ballot, turn it in on time, and/or get it approved?
 
-2. Which gender shows up the most in the dataset? Could gender have played a role in voter accesibility, and if so, how? Was it working intersectionally with something else, like race? 
+2. Which gender shows up the most in the dataset? Could gender have played a role in voter accessibility, and if so, how? Was it working intersectionally with something else, like race? 
 
-3. 
+3. What were the most common reasons voters chose to use absentee ballots? Lack of transporation, too much distance from their nearest polling place, accessibility issues, social anxiety, time contraints, etc. I feel like knowing these would make it easier to look for potential solutions.
 
 **Question**: What can you understand about the `ballot_rtn_status` column? In other words, what types of values are possible?
 
-ENTER_YOUR_RESPONSE_HERE
+The types of values that appear to be possible for the 'ballot_rtn_status' are 'Accepted', 'Accepted - Cured', 'Spoiled-EV', 'Spoiled', 'Returned Undeliverable', 'ID Not Provided', 'Returned After Deadline', and 'Pending Cure'. I understand that this column's values have to do with whether or not the ballot was actually accepted and counted or rejected and not counted, which makes it essential to the discussion of advocating for more accessibility and equity for voters (especially voters of marginalized groups). It's a helpful column for spotting patterns in who is accepted and who isn't, such as racial or gender-based patterns. 
 
 ## 2.3.4 Calculate Absolute Grouped Frequencies with RFS Method
 
