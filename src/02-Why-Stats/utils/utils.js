@@ -14,8 +14,12 @@ import {utcParse,utcFormat} from "d3-time-format";
 
 // Add Your Date Parsers & Formatters Below
 
+const parseDate = utcParse("%m/%d/%Y");
+
+const formatWeekNumber = utcFormat("%U");
 
 // Complete this codeblock code from Chapter E-2.2, exercise 2 below
+
 export const mapDateObject = (data, dateString) => {
 
   // 1. Use .map() to iterate the `data` and create new date props
@@ -32,7 +36,8 @@ export const mapDateObject = (data, dateString) => {
        *    property for each `ballot`
        *    called `objField`.
       **/
-     ballot[objField] = parseDate(ballot[dateField])
+     ballot[objField] = parseDate(ballot[dateString])
+     ballot[weekField] = Number(formatWeekNumber(ballot[objField]))
     }
     return ballot
   })
@@ -235,3 +240,30 @@ export const sumUpWithReducerTests = (reducerFunctions, reducerProperties, data,
  *     third level.
 **/
 
+export const threeLevelRollUpFlatMap = (data, level1Key, level2Key, level3Key, countKey) => {
+  const colTotals = rollups(
+    data,
+    (v) => v.length, 
+    (d) => d[level1Key], 
+      (d) => d[level2Key],
+        (d) => d[level3Key] 
+  )
+  const flatTotals = colTotals.flatMap((l1Elem) => {
+    let l1KeyValue = l1Elem[0]
+    const flatLevels = l1Elem[1].flatMap((l2Elem) => {
+      let l2KeyValue = l2Elem[0]
+      const finalLevel = l2Elem[1].flatMap((l3Elem) => {
+        let l3KeyValue = l3Elem[0]
+        return {
+          [level1Key]: l1KeyValue,
+          [level2Key]: l2KeyValue,
+          [level3Key]: l3KeyValue,
+          [countKey]: l3Elem[1]
+        }
+      })
+      return finalLevel
+    })
+    return flatLevels
+  })
+  return flatTotals
+}
