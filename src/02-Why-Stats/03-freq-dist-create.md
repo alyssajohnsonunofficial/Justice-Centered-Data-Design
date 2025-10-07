@@ -282,7 +282,7 @@ Ok, so we want to create a desired ***grouping*** of `ballot_rtn_status` > `race
     2. Add second param: the computation to perform on the rolled up data. In this case, we want the absolute frequency of ballot statuses per race.
 
 <!-- Example rollups() -->
-```javascript
+```js
 /**
  * .rollups()
  * @return: a flattened version of InternMap:
@@ -301,7 +301,7 @@ const afStatusByRace = d3.rollups(
 </p>
 
 <!-- afStatusByRace output -->
-```javascript
+```js
 // Convert to render on page
 afStatusByRace
 ```
@@ -332,7 +332,7 @@ Let's first look at how `.flat()` works, so you can see how this process will he
 
 Note how it nicely does what it says: takes any array at a particular nested level, iterates through it, and populates them in-place.
 
-```javascript
+```js
 // Convert if you want to see the logs in your own browser
 const arr1 = [0, 1, 2, [3, 4]]
 
@@ -386,25 +386,29 @@ In this second video, I explain the code inside of the custom `oneLevelRollUpFla
 
 Ok, now that you have watched the above video about the `oneLevelRollUpFlatMap()` function. Import it from the `./utils/utils.js` file in the codeblock below.
 
-```javascript
+```js
 // Convert me and import oneLevelRollUpFlatMap()
-import {PUT_ANY_FUNCTIONS_IN_HERE, SEPARATE_MORE_THAN_ONE, WITH_COMMAS} from "enter/path/here.js"
+import {oneLevelRollUpFlatMap} from "./utils/utils.js"
 
 ```
 
 Now, see if it worked!
 
-Use the imported function in the below codeblock to rollup and flatten `ncVotersAll` by (1) `race` and (2) `ballot_rtn_status`.
+Use the imported function in the below codeblock to rollup and flatten `ncVotersAll` by (1) `race` and (2) `ballot_rtn_status`. (IGNORE 2ND)
 
-```javascript
+```js
 // Convert and use `oneLevelRollUpFlatMap()` on `ncVotersAll`
-const byRaceAndBallotStatus = ADD_FUNCTION_HERE
+const byRace = oneLevelRollUpFlatMap(
+  ncVotersAll,
+  "race", 
+  "count",
+)
 ```
 
 Ok, let's see if `byRaceAndBallotStatus` shows up here by rendering it to the page.
 
-```javascript
-byRaceAndBallotStatus
+```js
+byRace
 ```
 
 <div class="error-caption">
