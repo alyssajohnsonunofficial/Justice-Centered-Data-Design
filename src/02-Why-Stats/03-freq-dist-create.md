@@ -588,7 +588,7 @@ import {sumUpWithReducerTests} from "./utils/utils.js"
 const ballotResultsAcceptedOrRejected = sumUpWithReducerTests(
   [{type: "Accepted Ballot", func: onlyAcceptedBallots, }, {type: "Rejected Ballot", func: onlyRejectedBallots, },
   ],
-  ["ASIAN", "WHITE"],
+  ["ASIAN", "WHITE", "UNDESIGNATED", "BLACK or AFRICAN AMERICAN", "TWO or MORE RACES",],
   byRaceAndStatus, 
   "race",
   "ballot_rtn_status",
@@ -615,15 +615,35 @@ Ok, tabulate the rolledup and summed-up results with `Inputs.table()`. Be sure t
 3. Sort the table based on what you deem the most helpful combo of column and ascending vs. descending.
 4. Be sure to provide a short response to the question about your table design.
 
-```javascript
+```js
 // Enter your table here
+Inputs.table(
+  ballotResultsAcceptedOrRejected,
+  {
+    rows: 30,
+    header: {
+      race: "Race of Voter",
+      ballot_rtn_status: "Ballot Status",
+      af: "Number of Ballots Total",
+    },
+    width: {
+      race: 70,
+      ballot_rtn_status: 70,
+      af: 90,
+    },
+    align: {
+      race: "right",
+      ballot_rtn_status: "center",
+      af: "left"
+    },
+  }
+)
 ```
-
 ### Question: Explain your table design choices.
 
 **Q**: What *insights* and *new questions* did you garner from it that you hope to also illustrate/provide for your audience?
 
-ENTER_YOUR_RESPONSE_HERE
+I picked the fields that felt most important to me in terms of containing information that would be helpful for spotting issues of inaccessibility or oppression for voters (race, age, and ballot status). I wanted the header names to be slightly simpler and to have a sense of consistency, and I adjusted the width and alignment based on what visually looked the best to me. In terms of insights, this data showed me how many ballots from each race were accepted vs how many from each race were rejected, which helped me visualize the number of accepted vs rejected balance for each race and consider whether societal factors played a role. For me, this data draws new questions about the role race may have played in the acceptance vs rejection process for these absentee ballots. The most notable stat for me was the rate of accepted vs rejected ballots for Black and/or African American voters: 29,843 accepted ballots to 11,047 rejected ballots, a much larger percentage of rejections compared to many of the other race options. For the audience, I hope this helps to illustrate the role racial oppression can play in the ability for non-white voters to successfully exercise their right to vote. I also hope that the audience generates the kind of questions I myself now have after making the chart. Why is there such a large percentage of rejected votes for Black or African American voters? What factors could be affecting these voters' ability to get their votes accepted? Are there aspects of the voting process that are too inaccessible or not taught thoroughly enough to marginalized groups of people? 
 
 ## Conclusion
 
