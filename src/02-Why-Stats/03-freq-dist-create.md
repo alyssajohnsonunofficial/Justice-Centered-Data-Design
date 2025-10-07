@@ -424,12 +424,18 @@ byRace
 
 Ok, now you try this custom function with a different variable from the dataset.
 
-```javascript
+```js
 // Convert and create your own one-level grouping
+const byEthnicity = oneLevelRollUpFlatMap(
+  ncVotersAll,
+  "ethnicity", 
+  "count",
+)
 ```
 
-```javascript
+```js
 // Convert and output your variable here
+byEthnicity
 ```
 
 ## E6. Import and use `twoLevelRollUpFlatMap()` on `ncVotersAll`
@@ -449,7 +455,8 @@ In this video, follow along as I explain the code for the `twoLevelRollUpFlatMap
 After you have watched the above video, it is time for you to try this custom function with the two example variables used in the our running angle.
 
 ```js
-let byRaceAndBallotStatus = twoLevelRollUpFlatMap(
+import {twoLevelRollUpFlatMap} from "./utils/utils.js"
+let byRaceAndStatus = twoLevelRollUpFlatMap(
   ncVotersAll,
   "race",
   "ballot_rtn_status",
@@ -458,7 +465,7 @@ let byRaceAndBallotStatus = twoLevelRollUpFlatMap(
 ```
 
 ```js
-byRaceAndBallotStatus
+byRaceAndStatus
 ```
 
 ## 2.3.7 RFS 3. Sum it up with D3's .sum()!
@@ -469,7 +476,7 @@ Indeed, sometimes, we will need to access properties in an object with the `Numb
 
 Here's the easiest way to use d3.sum(). The first parameter is required, which is any type of iterable. Since you do not need to explicitly define how to access the Number values in a simple array, like the example below, `d3.sum()` has been programmed to assume it is a simple array and sum it up.
 
-```javascript
+```js
 // d3.sum(iterable, accessor) // 10
 d3.sum([1, 2, 2, 2, NaN, 3, null]) // 10
 ```
@@ -541,7 +548,7 @@ Follow along with me in the video below to learn how to create a custom function
 <!-- Your Reducer Functions -->
 ```js
 // Convert and create your own reducer functions akin to "ACCEPTED" vs "REJECTED"
-const fetchAcceptedBallots = (d) => {
+const onlyAcceptedBallots = (d) => {
   if (d.ballot_rtn_status != null && d.ballot_rtn_status.startsWith("ACCEPTED") == true) {
     return d.af
   }
@@ -550,7 +557,7 @@ const fetchAcceptedBallots = (d) => {
   }
 }
 
-const fetchRejectedBallots = (d) => {
+const onlyRejectedBallots = (d) => {
   if (d.ballot_rtn_status != null && d.ballot_rtn_status.startsWith("ACCEPTED") == false) {
     return d.af
   }
@@ -563,9 +570,12 @@ const fetchRejectedBallots = (d) => {
 const reducerProps = ["WHITE", "BLACK OR AFRICAN AMERICAN"]
 
 const reducerFuncs = [
-  { type: "ACCEPTED", func: getAcceptedBallots },
-  { type: "REJECTED", func: getRejectedBallots },
+  { type: "ACCEPTED", func: onlyAcceptedBallots },
+  { type: "REJECTED", func: onlyRejectedBallots },
 ]
+```
+```js
+import {sumUpWithReducerTests} from "./utils/utils.js"
 ```
 
 <!-- Call and use sumUpWithReducerTests() -->
@@ -575,6 +585,15 @@ const reducerFuncs = [
  * Be sure to review the utils.js file, so you
  * can see the parameters needed for the function.
 **/
+const ballotResultsAcceptedOrRejected = sumUpWithReducerTests(
+  [{type: "Accepted Ballot", func: onlyAcceptedBallots, }, {type: "Rejected Ballot", func: onlyRejectedBallots, },
+  ],
+  ["ASIAN", "WHITE"],
+  byRaceAndStatus, 
+  "race",
+  "ballot_rtn_status",
+  "af",
+)
 ```
 
 <p class="codeblock-caption">
@@ -582,8 +601,9 @@ const reducerFuncs = [
 </p>
 
 <!-- Your Reducer Functions -->
-```javascript
+```js
 // Convert and output your summed up data
+ballotResultsAcceptedOrRejected
 ```
 
 ## E8. Tabulated absolute frequencies of rejected ballots per race
