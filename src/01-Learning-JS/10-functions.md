@@ -93,8 +93,9 @@ Overall keep that rule-of-thumb in mind as you practice writing functions.
 Use D3.js `FileAttachment()` method below in VS Code. Remember that you'll need to write a relative path as a String parameter that helps the computer find where the CSV file is in relation to this particular page's file in the project tree.
 
 <!-- Attach sampled NC voter data -->
-```javascript
+```js
 // Convert to `js` codeblock and attach sampled NC voter data file: nc_absentee_mail_2024_n20000.csv
+const data = FileAttachment("./../data/nc-voters/nc_absentee_mail_2024_n20000.csv").csv({typed: true})
 ```
 
 ## E2. Convert String dates to Date() objects
@@ -103,27 +104,40 @@ Use D3.js `FileAttachment()` method below in VS Code. Remember that you'll need 
 
 First outline your procedure with steps below.
 
-1. Enter step 1
-2. Enter step 2
-3. ...
+1. Create a data parser with d3.utcParse for the Date object conversion
+2. Bring in 'data' (the dataset we used FileAttachment for earlier) and use the map function to create a codeblock that achieves the intended goal (will convert to a more generalized function later)
+3. Create a new property in the objects that uses String date fields; in this case, creating "ballot_req_dt_obj" from "ballot_req_dt" with dateParser 
+4. Return the item (in this case, labeled "ballot") and execute the new code ("dataUpdated") to check that it works. It did! Remembered to use lowercase 'y' this time to get the correct dates
+5. Convert the codeblock into a function using the correct structure (+ making the objects and parameters more generalized, i.e. "item" instead of "ballot")
 
 Now, code!
 
-```javascript
-// Your function code goes here
+```js
+// Went over this in class with prof; can create a .map() procedure first and then wrap it in a function. Did this and had the basic structure of a function written down lower in the codeblock for easier conversation. 
+let dateParse = d3.utcParse("%d/%m/%y")
+const mapConvertedDateObject = (data, dateKey, extraKey) => {
+  let newData = data.map(
+  (item) => {
+    let newKey = dateKey+extraKey
+    item[newKey] = dateParse(item[dateKey])
+    return item
+  }
+  )
+  return newData
+}
 ```
-
-```javascript
-// Your use of the function code goes here
+```js
+// Carried over "data" again since that's what I used for the original codeblock I converted into a function; same with "ballot_rtn_dt" and "_obj" 
+mapConvertedDateObject(data, "ballot_rtn_dt", "_obj")
+```
+```js
+// Convert and output variable here
+mapConvertedDateObject
 ```
 
 <p class="codeblock-caption">
   E1 Interactive Output
 </p>
-
-```javascript
-// Convert and output variable here
-```
 
 ## E3. Create Your Own Function (with Conditions)!
 
@@ -131,26 +145,40 @@ Now, code!
 
 First outline your procedure with steps below.
 
-1. Enter step 1
-2. Enter step 2
-3. ...
+1. Declare a function for the race object of the ballots from the dataset 
+2. Set my parameters (data, raceKey), which are the dataset and my race key 
+3. Use .map() to access each ballot and set the format for my returned response
+4. Return "Race listed on ballot is" + the listed race 
+5. Declare the function code in a new codeblock
+6. Declare my output variable in a third codeblock
 
 Now, code!
 
-```javascript
+```js
 // Your function code goes here
+const raceCategories = (data, raceKey) => {
+  let raceDataMap = data.map(
+    (ballot) => {
+      ballot.raceFormat = ballot.raceKey
+      return "Race listed on ballot is" + ballot.raceFormat 
+    }
+  )
+  return raceDataMap
+}
 ```
 
-```javascript
+```js
 // Your use of the function code goes here
+raceCategories = (data, "race_obj")
 ```
 
 <p class="codeblock-caption">
   E2 Interactive Output
 </p>
 
-```javascript
+```js
 // Your output variable here
+raceCategories
 ```
 
 ## Submission
