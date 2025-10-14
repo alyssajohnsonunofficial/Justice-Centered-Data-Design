@@ -3,7 +3,7 @@
 ```js
 import {utcParse, utcFormat} from "d3-time-format";
 // Import your functions
-import {oneLevelRollUpFlatMap, twoLevelRollUpFlatMap, threeLevelRollUpFlatMap, mapDateObject, getUniquePropListBy} from "./utils/utils.js";
+import {oneLevelRollUpFlatMap, twoLevelRollUpFlatMap, threeLevelRollUpFlatMap, mapDateObject, getUniquePropListBy, weekRaceAF, rProperty} from "./utils/utils.js";
 ```
 
 ## Start Your GH Workflow
@@ -596,11 +596,11 @@ const uniqueListOfWeekNumbers = getUniquePropListBy(
 ```
 ```js
 uniqueListOfWeekNumbers
-````
+```
 
-<!-- Counting it all up through a series of custom loops -->
+
 ```js
-const afGroupedPercResults = []
+  const afGroupedPercResults = []
 
   for (const weekNumber of uniqueListOfWeekNumbers) {
 
@@ -639,11 +639,6 @@ const afGroupedPercResults = []
     }
   }
 ```
-
-<p class="codeblock-caption">
-  Output of afGroupedPercResults.
-</p>
-
 ```js
 afGroupedPercResults
 ```
@@ -661,21 +656,29 @@ In a codeblock, use JS' `.filter()` on your grouped results to create a two cons
 #### WHITE, rejected, weeks 0-45
 ![white race rejected ballot grouping output](./../assets/images/2-why-stats/04-plot-filtering-groups-white-rej.png)
 
+#### BLACK or AFRICAN AMERICAN, rejected, weeks 0-45
+![black race rejected ballot grouping output](./../assets/images/2-why-stats/04-plot-filtering-groups-white-rej.png)
+
+
+
+
+#### Filtered Data 
+
+##### Rejected White 
 ```js
-whiteRejectedResults = afGroupedPercResults.filter(group => group.race != "WHITE" && group.ballot_rtn_status == "REJECTED")
+const whiteRejectedResults = afGroupedPercResults.filter(group => group.race != "WHITE" && group.ballot_rtn_status == "REJECTED")
 ```
 ```js
 whiteRejectedResults
 ```
+
+##### Rejected Black
 ```js
-blackRejectedResults = afGroupedPercResults.filter(group => group.race != "BLACK or AFRICAN AMERICAN" && group.ballot_rtn_status == "REJECTED")
+const blackRejectedResults = afGroupedPercResults.filter(group => group.race != "BLACK or AFRICAN AMERICAN" && group.ballot_rtn_status == "REJECTED")
 ```
 ```js
 blackRejectedResults
 ```
-
-#### BLACK or AFRICAN AMERICAN, rejected, weeks 0-45
-![black race rejected ballot grouping output](./../assets/images/2-why-stats/04-plot-filtering-groups-white-rej.png)
 
 ### 6. Plot the line chart with Plot.plot()
 
@@ -693,7 +696,7 @@ Remember, you should be plotting the weeks along the x-axis and the percentage v
     const parseDate = utcParse("%m/%d/%y")
     const formatWeekNumber = d3.utcFormat("%W")
     // 2. Created as a list of objects in case I want to add more specific dates/tips
-    const pollsWeekOfLastDay = [ { lastWeek: Number (formatWeekNumber( parseDate("10/29/24") ) ), }]
+    const pollsWeekOfLastDay = [{ lastWeek: Number (formatWeekNumber( parseDate("10/29/24") ) ), }]
     // 3. The mark to includes in your Plot's `marks` array option
     Plot.tip(
       [`Last day\nto req\nOct 29th`],
@@ -708,14 +711,19 @@ Do the best you can to recreate what you see in the video example.
 </video>
 
 ```js
-Plot.plot({
+const parseDate = utcParse("%m/%d/%y")
+const formatWeekNumber = d3.utcFormat("%W")
+const pollsWeekOfLastDay = [{lastWeek:Number(formatWeekNumber(parseDate("10/29/24"))),}]
+
+Plot.plot({ 
+  caption: "Percentage of rejected ballots, sorted by race and week",
   inset: 10,
   y: {
     label: "Percentage",
-    domain: [0, 55],
+    domain: [0,.55],
   },
   x: {
-    label: "Week Requested"
+    label: "Week Requested",
     domain: [0, 45],
   },
   marks: [
@@ -728,7 +736,7 @@ Plot.plot({
         tip: {
           format: {
             y: (d) => d3.format(".2%")(d),
-            x: (d) => 'Week '+d,
+            x: (d) => 'Week '+ d,
           },
         },
         stroke: "red",
@@ -742,23 +750,16 @@ Plot.plot({
         tip: {
           format: {
             y: (d) => d3.format(".2%")(d),
-            y: (d) => 'Week '+ d,
+            x: (d) => 'Week '+ d,
           },
         },
         stroke: "black",
       }
-    ),
-
-  Plot.tip(
-      [`Last day\nto req\nOct 29th`],
-        {
-          x: pollsWeekOfLastDay["lastWeek"], 
-          y: 0, 
-          dy: -5, 
-          dx: 277, 
-          anchor: "bottom"
-        }
       ),
+    Plot.tip(
+      [`Last day\nto req\nOct 29th`],
+      {x: pollsWeekOfLastDay["lastWeek"], y: 0, dy: -5, dx: 277, anchor: "bottom"},
+    ),
     Plot.dot(
       [`Last day\nto req\nOct 29th`],
         {
@@ -770,7 +771,7 @@ Plot.plot({
           stroke: "black", 
           weight: 10,
           r: 5,
-         }
+         },
       ),
     ],
   })
@@ -782,7 +783,7 @@ Plot.plot({
 
 After working with the NC voter dataset, describe any new insights, new questions or angles, or issues that you might consider sharing with your team at Protect Democracy.
 
-YOUR_RESPONSE_HERE
+Although I've had some issues turning the dataset into the final product, I've gathered throughout this chapter and the previous that there's a much higher rejection rate for black voter ballots than for white voter ballots, and I'm curious as to whether there's an angle that could be taken for the weeks. I'd want to discuss this with my team at Protect Democracy to see if we could further look into the weeks where the most rajections appeared to happen, especially if these rejections are mainly of black ballots. I think there's a good chance that if specific weeks experienced more rejections than others, then there must have been specific factors causing this --- and if my team could figure out these factors, we could potentially help alleviate them and (as a result) help alleviate racist practices within the absentee ballot system. 
 
 ### 2. Types of graphs
 
@@ -790,27 +791,27 @@ Use the structure provided below to briefly discuss each type of graph: line, ba
 
 #### Line
 
-- **Appropriate level of data**:
-- **Strengths**:
-- **Weaknesses**:
+- **Appropriate level of data**: Line charts are good for interval/ratio levels of data, such as this chapter's example of the interval level of 'per week'. 
+- **Strengths**: Connects the "dots" created by interval level data, allowing us to see if change occurs within this data over time. 
+- **Weaknesses**: Not good for nominal levels of data, since it would create confusion to connect dots or lines across these (the chapter gives the example of categorizing by political parties)
 
 #### Bar
 
-- **Appropriate level of data**:
-- **Strengths**:
-- **Weaknesses**:
+- **Appropriate level of data**: Nominal levels of data, like the chapter's example of political parties
+- **Strengths**: Good for representing data that doesn't have inherent order or rank, displays absolute frequencies of nominal data well and can be used for comparison, easy to interpret simple findings from
+- **Weaknesses**: Not good for showing individual data points or individual pieces of info, limited, doesn't give the full picture or specifics as well, doesn't really show patterns or impact across data 
 
 #### Pie
 
-- **Appropriate level of data**:
-- **Strengths**:
-- **Weaknesses**:
+- **Appropriate level of data**: Data with percentages, single category with multiple aspects or components
+- **Strengths**: Great for comaprisons within a category
+- **Weaknesses**: Doesn't show trends/patterns across time or data, doesn't give much info other than percentage, can be misleading 
 
 #### Histogram
 
-- **Appropriate level of data**:
-- **Strengths**:
-- **Weaknesses**:
+- **Appropriate level of data**: Interval/ratio levels 
+- **Strengths**: Shows the distribution across intervals or ratios, including of absolute frequencies; good for grouping data and showing trends/patterns over time
+- **Weaknesses**: Not good for viewing individual/exact data points or for making comparisons, and can be misleading or difficult to interpret accurately 
 
 ### 3. On making un/ethical arguments with data
 
