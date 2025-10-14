@@ -14,9 +14,9 @@ import {utcParse,utcFormat} from "d3-time-format";
 
 // Add Your Date Parsers & Formatters Below
 
-const parseDate = utcParse("%m/%d/%Y");
+const parseDate = utcParse("%m/%d/%Y")
 
-const formatWeekNumber = utcFormat("%U");
+const formatWeekNumber = utcFormat("%U")
 
 // Complete this codeblock code from Chapter E-2.2, exercise 2 below
 
@@ -180,7 +180,7 @@ export const twoLevelRollUpFlatMap = (data, level1Key, level2Key, countKey) => {
  * @return
  *  1. Array of Objects. Each object represents the reduced and summed up data.
  */
-export const sumUpWithReducerTests = (reducerFunctions, reducerProperties, data, level1Key, level2Key, countKey) => {
+export const sumUpWithReducerTests = (reducerFunctions,reducerProperties,data,level1Key,level2Key,countKey) => {
 
   // 1. Create array for tallied frequency results
   const freqResults = []
@@ -191,7 +191,7 @@ export const sumUpWithReducerTests = (reducerFunctions, reducerProperties, data,
 
     // 3. Loop through interested properties
     //    - Use `for...in` so we can loop as many tests as provided
-    for (const rProperty in reducerProperties) {
+  for (const rProperty in reducerProperties) {
 
       // 4. Tally frequency based on condition in functions
       const summedUpLevel = sum(
@@ -214,7 +214,7 @@ export const sumUpWithReducerTests = (reducerFunctions, reducerProperties, data,
         // KEY->VALUE pairs with newly summed up absolute frequency
         [level1Key]: reducerProperties[rProperty],
         [level2Key]: reducerFunctions[testorObj]["type"],
-        [countKey]: summedUpLevel
+        [countKey]: summedUpLevel,
       })
 
     }
@@ -246,15 +246,18 @@ export const threeLevelRollUpFlatMap = (data, level1Key, level2Key, level3Key, c
     (v) => v.length, 
     (d) => d[level1Key], 
       (d) => d[level2Key],
-        (d) => d[level3Key] 
+        (d) => d[level3Key],
   )
   const flatTotals = colTotals.flatMap((l1Elem) => {
     let l1KeyValue = l1Elem[0]
-    const flatLevels = l1Elem[1].flatMap((l2Elem) => {
+    
+  const flatLevels = l1Elem[1].flatMap((l2Elem) => {
       let l2KeyValue = l2Elem[0]
-      const finalLevel = l2Elem[1].flatMap((l3Elem) => {
+      
+  const finalLevel = l2Elem[1].flatMap((l3Elem) => {
         let l3KeyValue = l3Elem[0]
-        return {
+        
+    return {
           [level1Key]: l1KeyValue,
           [level2Key]: l2KeyValue,
           [level3Key]: l3KeyValue,
