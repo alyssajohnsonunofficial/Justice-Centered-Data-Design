@@ -656,6 +656,75 @@ Do the best you can to recreate what you see in the video example.
   <source src="../assets/vids/02-why-stats/02-voter-reject-perc.mp4" type="video/mp4" />
 </video>
 
+```js
+Plot.plot({
+  inset: 10,
+  y: {
+    label: "Percentage",
+    domain: [0, 55],
+  },
+  x: {
+    label: "Week Requested"
+    domain: [0, 45],
+  },
+  marks: [
+    Plot.ruleY([0]),
+    Plot.line(
+      whiteRejectedResults,
+      {
+        x: "ballot_req_dt_week",
+        y: "percentage",
+        tip: {
+          format: {
+            y: (d) => d3.format(".2%")(d),
+            x: (d) => 'Week '+d,
+          },
+        },
+        stroke: "red",
+      }
+    ),
+    Plot.line(
+      blackRejectedResults,
+      {
+        x: "ballot_req_dt_week",
+        y: "percentage",
+        tip: {
+          format: {
+            y: (d) => d3.format(".2%")(d),
+            y: (d) => 'Week '+ d,
+          },
+        },
+        stroke: "black",
+      }
+    ),
+
+  Plot.tip(
+      [`Last day\nto req\nOct 29th`],
+        {
+          x: pollsWeekOfLastDay["lastWeek"], 
+          y: 0, 
+          dy: -5, 
+          dx: 277, 
+          anchor: "bottom"
+        }
+      ),
+    Plot.dot(
+      [`Last day\nto req\nOct 29th`],
+        {
+          x: pollsWeekOfLastDay["lastWeek"],
+          y: 0, 
+          dy: 0, 
+          dx: 277, 
+          anchor: "bottom", 
+          stroke: "black", 
+          weight: 10,
+          r: 5,
+         }
+      ),
+    ],
+  })
+```
+
 ## E8. Reflection Questions
 
 ### 1. Reflect on any new questions, angles, ideas
