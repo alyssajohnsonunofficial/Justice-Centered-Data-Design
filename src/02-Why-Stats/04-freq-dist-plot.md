@@ -539,7 +539,13 @@ Finally, we need to reduce our grouped data to either being ACCEPTED or REJECTED
 I recommend reusing your code from the last chapter.
 
 ```js
-const onlyAcceptedBallots = (d) => {
+/**
+ * Write a reducer function that checks to make sure
+ * ballot_rtn_status is NOT null and starts with "ACCEPTED"
+ *    If true, return the 'af' value for the object
+ *    If false, return 0
+**/
+const acceptedBallotsReducer = (d) => {
   if (d.ballot_rtn_status != null && d.ballot_rtn_status.startsWith("ACCEPTED") == true) {
     return d.af
   }
@@ -547,54 +553,99 @@ const onlyAcceptedBallots = (d) => {
     return 0
   }
 }
-
-const onlyRejectedBallots = (d) => {
+// Now, do the same for what will become "REJECTED" statuses
+const rejectedBallotsReducer = (d) => {
   if (d.ballot_rtn_status != null && d.ballot_rtn_status.startsWith("ACCEPTED") == false) {
     return d.af
   }
-  else{ 
+  else {
     return 0
   }
-  }
+}
 ```
+
+<!-- Reducer Properties & Objectify reducerFuncs -->
 ```js
-const reducerProps = ["WHITE", "BLACK OR AFRICAN AMERICAN"]
+const reducerProperties = [
+  "WHITE", "BLACK or AFRICAN AMERICAN",
+]
 
 const reducerFuncs = [
-  { type: "ACCEPTED", func: onlyAcceptedBallots },
-  { type: "REJECTED", func: onlyRejectedBallots },
+  {
+    type: "ACCEPTED",
+    func:  acceptedBallotsReducer,
+  },
+  {
+    type: "REJECTED",
+    func:  rejectedBallotsReducer,
+  },
 ]
-```
-```js
-import {sumUpWithReducerTests} from "./utils/utils.js"
-```
 
-<!-- Call and use sumUpWithReducerTests() -->
-```js
 /**
- * Convert and use sumUpWithReducerTests().
- * Be sure to review the utils.js file, so you
- * can see the parameters needed for the function.
+ * Here's a gimme function that I already imported.
+ * getUniquePropListBy() in utils.js can help you create
+ * a unique list of a specific property in the array of objects.
+ * EXAMPLE: A unique list of week numbers for `ballot_req_dt_week`
 **/
-const ballotResultsAcceptedOrRejected = sumUpWithReducerTests(
-  [{type: "Accepted Ballot", func: onlyAcceptedBallots, }, {type: "Rejected Ballot", func: onlyRejectedBallots, },
-  ],
-  ["ASIAN", "WHITE", "UNDESIGNATED", "BLACK or AFRICAN AMERICAN", "TWO or MORE RACES",],
-  byRaceAndStatus, 
-  "race",
-  "ballot_rtn_status",
-  "af",
+const uniqueListOfWeekNumbers = getUniquePropListBy(
+  // Dataset
+  afByWeekRaceStatus,
+  // Specific key to pass
+  "ballot_req_dt_week"
 )
+```
+```js
+uniqueListOfWeekNumbers
+````
+
+<!-- Counting it all up through a series of custom loops -->
+```js
+const afGroupedPercResults = []
+
+  for (const weekNumber of uniqueListOfWeekNumbers) {
+
+  for (const testObj in reducerFuncs) {
+
+  for (const rProperty in reducerProperties) {
+      
+    const weekRaceAF = d3.sum (
+      afByWeekRaceStatus,
+        (d) => {
+          if (d.ballot_req_dt_week == weekNumber && d.ballot_rtn_status != null && d.race == reducerProperties[rProperty]) {
+            return d.af
+          }
+        else {
+          return 0
+        }
+        }
+      )
+    } 
+  const summedUpLevel = d3.sum(
+    afByWeekRaceStatus,
+       (d) => {
+        if (d.race == reducerProperties[rProperty] && d.ballot_req_dt_week == weekNumber) {
+          const xTotalToSum = reducerFuncs[testObj]["func"](d)
+          return xTotalToSum
+        }
+      }
+    )
+      afGroupedPercResults.push({
+        ballot_req_dt_week: weekNumber,
+        race: reducerProperties[rProperty],
+        ballot_rtn_status: reducerFuncs[testObj]["type"],
+        af: summedUpLevel,
+        percentage: summedUpLevel/weekRaceAF,
+      })
+    }
+  }
 ```
 
 <p class="codeblock-caption">
-  Interactive output of using sumUpWithReducerTests().
+  Output of afGroupedPercResults.
 </p>
 
-<!-- Your Reducer Functions -->
 ```js
-// Convert and output your summed up data
-ballotResultsAcceptedOrRejected
+afGroupedPercResults
 ```
 
 ### 5. Filter the data for plotting
