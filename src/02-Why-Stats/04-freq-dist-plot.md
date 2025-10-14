@@ -474,7 +474,12 @@ For this plot, we want to include all ballot requests and statuses -- except any
 Assign it to a constant variable named `ncMailBallots`.
 
 <!-- JS codeblock to attach nc_absentee_mail_2024_no_dropped_dupes.csv -->
-
+```js
+const ncMailBallots = FileAttachment("./../data/nc-voters/nc_absentee_mail_2024_no_dropped_dupes.csv").csv({typed: true})
+```
+```js
+ncMailBallots
+```
 
 ### 2. Map date objects to OG data
 
@@ -483,11 +488,13 @@ Map those Date objects and other week properties with your custom `mapDateObject
 Assign it to a constant variable named `ncMailBallotsUpdated`.
 
 <!-- JS codeblock to map date objects as ncMailBallotsUpdated-->
-
+```js
+const ncMailBallotsUpdated = mapDateObject(ncMailBallots, "ballot_req_dt")
+```
 
 Output `ncMailBallotsUpdated` below:
 
-```javascript
+```js
 ncMailBallotsUpdated
 ```
 
@@ -501,11 +508,13 @@ Time to use your `threeLevelRollUpFlatMap` function!
 
 ![Output of white & black race > ballot return status grouping per week](./../assets/images/2-why-stats/04-plot-RFS-full-output.png)
 
-
+```js
+const afByWeekRaceStatus = threeLevelRollUpFlatMap(ncMailBallotsUpdated, "ballot_req_dt_week", "race", "ballot_rtn_status", "af")
+```
 
 #### Output of afByWeekRaceStatus
 
-```javascript
+```js
 // Convert and render data
 afByWeekRaceStatus
 ```
@@ -529,6 +538,65 @@ Finally, we need to reduce our grouped data to either being ACCEPTED or REJECTED
 
 I recommend reusing your code from the last chapter.
 
+```js
+const onlyAcceptedBallots = (d) => {
+  if (d.ballot_rtn_status != null && d.ballot_rtn_status.startsWith("ACCEPTED") == true) {
+    return d.af
+  }
+  else {
+    return 0
+  }
+}
+
+const onlyRejectedBallots = (d) => {
+  if (d.ballot_rtn_status != null && d.ballot_rtn_status.startsWith("ACCEPTED") == false) {
+    return d.af
+  }
+  else{ 
+    return 0
+  }
+  }
+```
+```js
+const reducerProps = ["WHITE", "BLACK OR AFRICAN AMERICAN"]
+
+const reducerFuncs = [
+  { type: "ACCEPTED", func: onlyAcceptedBallots },
+  { type: "REJECTED", func: onlyRejectedBallots },
+]
+```
+```js
+import {sumUpWithReducerTests} from "./utils/utils.js"
+```
+
+<!-- Call and use sumUpWithReducerTests() -->
+```js
+/**
+ * Convert and use sumUpWithReducerTests().
+ * Be sure to review the utils.js file, so you
+ * can see the parameters needed for the function.
+**/
+const ballotResultsAcceptedOrRejected = sumUpWithReducerTests(
+  [{type: "Accepted Ballot", func: onlyAcceptedBallots, }, {type: "Rejected Ballot", func: onlyRejectedBallots, },
+  ],
+  ["ASIAN", "WHITE", "UNDESIGNATED", "BLACK or AFRICAN AMERICAN", "TWO or MORE RACES",],
+  byRaceAndStatus, 
+  "race",
+  "ballot_rtn_status",
+  "af",
+)
+```
+
+<p class="codeblock-caption">
+  Interactive output of using sumUpWithReducerTests().
+</p>
+
+<!-- Your Reducer Functions -->
+```js
+// Convert and output your summed up data
+ballotResultsAcceptedOrRejected
+```
+
 ### 5. Filter the data for plotting
 
 Our angle for this plot focuses on "REJECTED" ballots only. Additionally, recall that our `Plot.plot()` line chart needs to draw 2 different lines based on results from data with the race values of either `"WHITE"` and `"BLACK or AFRICAN AMERICAN"`. Finally, I recommend filtering the week numbers to only include weeks 0-45.
@@ -541,6 +609,19 @@ In a codeblock, use JS' `.filter()` on your grouped results to create a two cons
 
 #### WHITE, rejected, weeks 0-45
 ![white race rejected ballot grouping output](./../assets/images/2-why-stats/04-plot-filtering-groups-white-rej.png)
+
+```js
+whiteRejectedResults = afGroupedPercResults.filter(group => group.race != "WHITE" && group.ballot_rtn_status == "REJECTED")
+```
+```js
+whiteRejectedResults
+```
+```js
+blackRejectedResults = afGroupedPercResults.filter(group => group.race != "BLACK or AFRICAN AMERICAN" && group.ballot_rtn_status == "REJECTED")
+```
+```js
+blackRejectedResults
+```
 
 #### BLACK or AFRICAN AMERICAN, rejected, weeks 0-45
 ![black race rejected ballot grouping output](./../assets/images/2-why-stats/04-plot-filtering-groups-white-rej.png)
