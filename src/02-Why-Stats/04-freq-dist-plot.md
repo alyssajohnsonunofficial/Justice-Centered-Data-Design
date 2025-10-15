@@ -817,7 +817,7 @@ Use the structure provided below to briefly discuss each type of graph: line, ba
 
 Describe an example of how the voter data could be manipulated to give an unethical presence to inaccurate conclusions. What specifically about the data work and any visualizing or reporting deliverables woudl make them unethical? Feel free to draw upon any of our past critical data readings, including this week's short addition about interpretive levels and the importance of context.
 
-YOUR_RESPONSE_HERE
+One example of manipuating the voter data in an unethical way would be to use a charting method that doesn't give extra context or show patterns, like the pie chart. If a pie chart was used to represent the rejection rates among races, it wouldn't be able to provide the necessary context of the approval rates for each race, and would therefore give the impression that the percentage of white people rejected was far higher than the percentage of black people rejected. Pie charts only show one specific category (i.e. rejection rates for each race) and can't really spot individual patterns or make comparisons, meaning the chart wouldn't be able to show that the rejection rate for black voters was extremely high when compared to their acceptance rate. Through this misrepresentation, the chart would essentially hide the inequalities present within the absentee ballot process, which is what would make this use of data unethical. 
 
 ## Submission
 
