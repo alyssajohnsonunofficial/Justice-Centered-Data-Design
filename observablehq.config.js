@@ -139,6 +139,10 @@ export default {
         },
       ]
     },
+    {
+          name: "3.2 Processing Text",
+          path: "/03-Textual-Analysis/02-processing"
+    },    
     // HELP PAGES
     {
       name: "Help",
