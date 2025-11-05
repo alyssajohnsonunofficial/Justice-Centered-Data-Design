@@ -118,25 +118,14 @@ export default {
           name: "2.4 Plotting Frequency Distributions",
           path: "/02-Why-Stats/04-freq-dist-plot--teachers_copy"
         },
-        {
-          name: "2.5 Central Tendency",
-          path: "/02-Why-Stats/05-central-tend"
-        },
-        {
-          name: "2.6 Variability",
-          path: "/02-Why-Stats/06-dispersion"
-        },
-      ]
-    },
-    // 3. Textual Analysis
-    {
-      name: "3. Textual Analysis",
-      open: false,
-      pages: [
-        {
-          name: "Weighting Words with TF-IDF",
-          path: "/03-Textual-Analysis/01-weighting-words"
-        },
+        // {
+        //   name: "2.5 Central Tendency & Variability",
+        //   path: "/02-Why-Stats/05-central-tend-plot--teachers_copy"
+        // },
+        // {
+        //   name: "2.6 Correlation & Linear Regression",
+        //   path: "/02-Why-Stats/06-correlation-and-regression--teachers_copy"
+        // },
       ]
     },
     {
@@ -164,7 +153,7 @@ export default {
       open: false,
       pages: [
         {name: "Directions", path: "/MIDTERM/index"},
-        {name: "Johnson's Midterm", path: "/MIDTERM/midterm"},
+        {name: "Lastname's Midterm", path: "/MIDTERM/midterm"},
       ]
     },
     // CLASS DEMOS
