@@ -135,7 +135,9 @@ export default {
      {
           name: "3.3 NER",
           path: "/03-Textual-Analysis/03-ner"
-    },  
+        },
+      ]
+    },
     // HELP PAGES
     {
       name: "Help",
