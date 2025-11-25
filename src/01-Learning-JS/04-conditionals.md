@@ -176,12 +176,10 @@ if () {
 
 
 ```js
-let person1Age = 28
-if (person1Age == 28 ) {
+if (person1Age < 30) {
   console.log("Person is less than 30 years old.")
 }
 ```
-
 ## E2
 
 Write an `if` statement that reports whether `person1Profession` is `"married"`.
@@ -189,7 +187,9 @@ Write an `if` statement that reports whether `person1Profession` is `"married"`.
 Use the following console log, when the condition is `true`: `console.log("Person is married.")`
 
 ```js
-// Your code here
+if (person1Profession == "married"){
+  console.log("Person is married.")
+}
 ```
 
 ## E3
@@ -199,9 +199,7 @@ Write an `if` statement that reports whether `person1Age` is less than 30 years 
 Use the following console log, when the condition is `true`: `console.log("Person is less than 30 years old and married.")`
 
 ```js
-let person1Age = 28
-let person1Profession = "married"
-if (person1Age = 28)(person1Profession="married") {
+if (person1Age < 30 && person1Profession = "married") {
   console.log("Person is less than 30 years old and married.")
 }
 ```
@@ -236,9 +234,8 @@ Use the following console logs:
 - For `else`: `console.log('Person is less than 30 years old.')`
 
 ```js
-let person2Age = 60
 
-if (person2Age == 60) {
+if (person2Age > 30) {
   console.log("Person is more than 30 years old.")
 }
 else {
@@ -261,7 +258,7 @@ let person3ChildStatus = ''
 
 ```js
 let person3Name = 'Margaret Farrell'
-let personAage = 30
+let person3age = 30
 let person3Disease = 'recent emigrant'
 let person3Profession = 'widow'
 let person3Gender = 'w'
@@ -279,13 +276,13 @@ Use the following console logs:
 ```js
 let person3Age = 30
 
-if (person3Age == 29) {
+if (person3Age < 30) {
   console.log("Person is less than 30 years old.")
 }
 else if (person3age == 30) {
   console.log('Person is exactly 30 years old.')
 }
-else (person3age == 31) {
+else {
   console.log("Person is more than 30 years old.")
 }
 ```
@@ -315,10 +312,8 @@ Write an `if` statement that will report whether `childrenTotal['person1']` has 
 Use the following console log, when `if` is `true`: `console.log('Person has children.')`.
 
 ```js
-let childrenTotal['person1'] = 1
-
-if (childrenTotal['person1'] >= 1) {
-      console.log("Person 1 has children.")
+if (childrenTotal['person1'] != 0){
+      console.log("Person has children.")
     }
 ```
 
@@ -341,14 +336,11 @@ if (childrenTotal['person2']) {
 ```
 
 ```js
-let childrenTotal['person1'] = 1
-if (childrenTotal['person1'] == 1) {
-  console.log(('Person has 1 child.'))
+if (childrenTotal['person1'] != 0){
+  console.log("Person has children.")
 }
-
-let childrenTotal['person2'] = 2
-if (childrenTotal['person2'] != 1) {
-  console.log(('Person has 2 children.'))
+if (childrenTotal['person2'] != 0){
+  console.log("Person has children.")
 }
 ```
 
@@ -381,20 +373,20 @@ let person1 = {
 let person1 = {
   profession: "married"
 }
-if (person1['profession'] == "married") {
-  console.log('Person is married.')
+if (person1['profession'] == "married"){
+  console.log("Person is married.")
 }
 
-else if (person1['profession'] == "laborer") {
-  console.log('Person is a laborer.')
+else if (person1['profession'] == "laborer"){
+  console.log("Person is a laborer.")
 }
 
-else if (person1['profession'] == "widow") {
-  console.log('Person is a widow.')
+else if (person1['profession'] == "widow"){
+  console.log("Person is a widow.")
 }
   
 else {
-  console.log('Person has unknown profession.')
+  console.log("Person has unknown profession.")
 }
 ```
 
@@ -423,19 +415,19 @@ person1['profession'] = "laborer"
 person1['profession'] = "laborer"
 
 if (person1['profession'] == "married") {
-  console.log('Person is married.')
+  console.log("Person is married.")
 }
 
-else if (person1['profession'] == "laborer") {
-  console.log('Person is a laborer.')
+else if (person1['profession'] == "laborer"){
+  console.log("Person is a laborer.")
 }
 
-else if (person1['profession'] == "widow") {
-  console.log('Person is a widow.')
+else if (person1['profession'] == "widow"){
+  console.log("Person is a widow.")
 }
   
 else {
-  console.log('Person has unknown profession.')
+  console.log("Person has unknown profession.")
 }
 ```
 
@@ -464,19 +456,19 @@ person1['profession'] = "student"
 person1['profession'] = "student" 
 
 if (person1['profession'] == "married") {
-  console.log('Person is married.')
+  console.log("Person is married.")
 }
 
 else if (person1['profession'] == "laborer") {
-  console.log('Person is a laborer.')
+  console.log("Person is a laborer.")
 }
 
 else if (person1['profession'] == "widow") {
-  console.log('Person is a widow.')
+  console.log("Person is a widow.")
 }
   
 else {
-  console.log('Person has unknown profession.')
+  console.log("Person has unknown profession.")
 }
 ```
 
