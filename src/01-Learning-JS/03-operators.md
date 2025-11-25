@@ -216,29 +216,55 @@ First, go back to the last chapter and grab the suite of primitives that you cre
 5. Check your work, as you go, by opening the browser console with the **Inspect Element** tool.
 
 ```js
-// 
-let superman = 5000000000, clarkkent = 25; clarkkent = superman; 
-clarkkent = 5000000000 
-
-let amigos = 10 - '7'; amigos = 3 
-var dalmations = 202 / '2'; dalmations = 101  
-
-// Yields Boolean false 
-Harry != Potter
-// Yields Boolean true
-Dumbledore != Good Guy    
-
-// Yields Boolean true
-Harry == Potter || James == Potter
-
-// Yields Boolean true
- Hermione == Granger && Ron == Weasley
-
-let a = chicken, b = meatball; b *=a; b = chickenmeatball
-
-let x = "Alyssa's age is" + 21; // "Alyssa's age is 21"
-
-console.log()
+let supermansSecretIdentity = "Clark Kent"
+```
+```js
+console.log(supermansSecretIdentity)
+```
+```js
+console.log(supermansSecretIdentity != "Lex Luthor") // Yields Boolean true 
+```
+```js
+let yearSupermanWasCreated = 1938
+```
+```js
+console.log(yearSupermanWasCreated)
+```
+```js
+console.log(yearSupermanWasCreated == 1938) // Yields Boolean true 
+console.log(yearSupermanWasCreated == 2004) // Yields Boolean false
+```
+```js
+let weakAgainstKryptonite = true 
+```
+```js
+console.log(weakAgainstKryptonite)
+```
+```js
+let lexLuthor = null
+```
+```js
+console.log(lexLuthor)
+```
+```js
+let smallvilleLoveInterests = {
+  mostPopular: "Lois Lane",
+  mostAnnoying: "Lana Lang",
+}
+smallvilleLoveInterests.myfavorite = "Chloe Sullivan!!!!"
+```
+```js
+console.log(smallvilleLoveInterests)
+console.log(smallvilleLoveInterests.myfavorite)
+```
+```js
+console.log(smallvilleLoveInterests.mostPopular == "Lois Lane" && smallvilleLoveInterests.mostAnnoying == "Lana Lang") // Yields Boolean True
+```
+```js
+console.log(yearSupermanWasCreated + 1970) // Yields '3908' in console
+```
+```js
+console.log(yearSupermanWasCreated < 2000) // Yields Boolean True
 ```
 
 ## Submission
