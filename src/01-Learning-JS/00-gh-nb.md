@@ -100,6 +100,22 @@ Here's that process again for you:
 4. Inside the "js" codeblock, add the following text `console.log("I do NOT show up on the page")`.
     - **NOTE**: This codeblock should NOT render on the locally hosted page. I'll show where to find it in class. `:-)`
 
+
+ <pre>```javascript
+        let multilineExample1 = "I will show up"
+        let multilineExample2 = "on the page"
+
+        let joinMultlineExample = multilineExample1 + multilineExample2
+        \`\`\`</pre>
+
+
+  <pre>```js 
+        let multilineExample1 = "console.log (I do NOT show up"
+        let multilineExample2 = "on the page)"
+
+        let joinMultlineExample = multilineExample1 + multilineExample2
+        \`\`\`</pre>
+
 ## Conclusion
 
 Techniques learned and practiced include:
