@@ -393,10 +393,10 @@ professions
 For this first exercise, I'll provide you with the basic structure:
 
 ```js
-let lessProfessions = ["married", "widow", "laborer",]
-for (const jobs in professions) {
-  if (jobs !== 1) {
-  lessProfessions.push(professions[jobs])
+let lessProfessions = []
+for (const job in professions) {
+  if (job != 1) {
+  lessProfessions.push(professions[job])
   }
 }
 ```
@@ -414,39 +414,32 @@ for (const jobs in professions) {
 **Goal**: Add a new profession as a String, `"spinster"`, to your `professions` list, then log it to the web console.
 
 ```js
-professions.push("spinster")
-console.log(professions)
+lessProfessions.push("spinster")
+```
+```js
+lessProfessions
+```
+```js
+console.log(lessProfessions)
 ```
 
 <p class="codeblock-caption">
   Interactive output of the array of <code>lessProfessions</code>
 </p>
 
-```js
-professions
-```
-
 ### E3. Loop through an array and log to the console
 
 **Goal**: Make a `for` loop that considers each item in the `professions` array and logs "Person's profession is ___", which "___" should be the profession from the array.
 
 ```js
-for (const job in professions) {
-  console.log(
-    job,
-    "--",
-    "Person's profession is", professions[job]
-  )
+for (const job of professions) {
+  console.log("Person's profession is", job)
 }
 ```
 
 ### E4. More conditional pushing with `for...of`
 
 **Goal**: Create a new array and populate, i.e., push all items from the `childStatus` array, except for any empty Strings. Use a `for...of` loop to do so.
-
-```js
-childStatusNew 
-```
 
 ```js
 let childStatusNew = []
@@ -456,8 +449,9 @@ for (const child of childStatus) {
     childStatusNew.push(child)
   }
 }
-
-
+```
+```js
+childStatusNew 
 ```
 
 ### E5. Conditional logging
@@ -466,13 +460,16 @@ for (const child of childStatus) {
 
 ```js
 for (const child of childStatus) {
-  if (child.length != 0) {
+  if (child.length > 1) {
     console.log("Person has child")
   }
   else {
     console.log("Person does not have child")
 }
 }
+```
+```js
+console.log(childStatus)
 ```
 
 Make sure you check to see if the correct language has been logged to the web console.
@@ -486,7 +483,6 @@ For your reference, here's the original declaration and instantiation of `sex`:
 ```js
 sex.push("unknown")
 ```
-
 ```js
 sex
 ```
@@ -506,11 +502,9 @@ else if (label == "f") {
 else if (label == "i") {
     console.log("Person is intersex")
   }
-else {
+else if (label == "unknown")
     console.log("Person's sex is not known")
   }
-  
-}
 ```
 
 Make sure to check if the items are logged correctly.
@@ -523,22 +517,23 @@ Since this is your first big use of `.map()`, I'll give you the skeleton of the 
 
 ```js
 // Skeleton of .map()
-let sex = ["f", "m", "f", "m", "i"]
 let sexFullTerm = sex.map (
   (sexItem) => {
 if (sexItem == "f") {
-  return "female";
+  return "female"
 }
 else if (sexItem == "m") {
-  return "male";
+  return "male"
 }
 else if (sexItem == "i") {
-  return "intersex";
+  return "intersex"
 }
-}
-)
-console.log(sexFullTerm)
-  
+else {
+  return "unknown"
+}})
+```
+```js
+sexFullTerm
 ```
 
 ## Submission
