@@ -186,10 +186,11 @@ There are other conventions and rules, but we don't need to belabor them right n
     </video>
 
 ```javascript
-// Convert this into a multiline comment
-// that includes your name, date,
-// and top 3 favorite foods, where
-// each set of info should be on a new line.
+/* my name is alyssa johnson
+* today is august 26, 2025
+* my top 3 favorite foods are italian wedding soup,  
+* stuffed-crust pizza, and vegan chocolate cupcakes 
+*/
 
 /**
  * 1. Replace the value in-between the
@@ -205,29 +206,29 @@ There are other conventions and rules, but we don't need to belabor them right n
  *    that will make sure each favorite food is
  *    logged to the correct place in the console.
 **/
-___ _faveFood1_ = "Enter_#1_Favorite_Food_Here"
-___ _faveFood2_ = "Enter_#2_Favorite_Food_Here"
+let italianSoupForMe10 = "Italian Wedding Soup"
+let stuffedCrustForMe10 = "Stuffed-Crust Pizza"
 
 console.log(
   "Ok, so y'all know that my #1 favorite food is ",
-  _faveFood1_,
-  ", and my second favorite food is ", _faveFood2_
+  italianSoupForMe10,
+  ", and my second favorite food is ", stuffedCrustForMe10
 )
 
-if (_faveFood2_.length > 0) {
+if (stuffedCrustForMe10.length > 0) {
   // Redeclare _faveFood1_ within this scope only
-  ___ _faveFood1_ = "Enter__NEW__#1_Favorite_Food_Here"
+  var italianSoupForMe10 = "Vegan Chocolate Cupcakes"
 
   console.log(
     "jk! ",
-    _faveFood1_,
+    italianSoupForMe10,
     " is actually my #1 favorite food."
   )
 }
 
 console.log(
   "Ok. Don't get mad, but my #1 favorite is ",
-  _faveFood1_, " actually."
+  italianSoupForMe10, " actually."
 )
 ```
 
